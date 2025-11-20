@@ -61,7 +61,32 @@ background-color: yellow;
     display:block
 }
 
+ .banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    margin-left: 500px;
+    
+    
+    animation: animacion 8s ease infinite;
+    background-size: 200% 200%;
+}
 
+@keyframes animacion {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 .seccion{
     overflow: hidden;
