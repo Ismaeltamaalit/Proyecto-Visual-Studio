@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nombre">Introducir cadenas separadas por comas, y la parte de esa cadena a buscar: </label>
+    <br><br>
+    <label for="cadena1">cadena con comas</label>
+    <input type="text" id="cadena1" name="cadena1">
+    <label for="cadena2">Buscar</label>
+    <input type="text" id="busqueda" name="cadena2">
+    <br>
+    <button id="ejecutar">Buscar</button>
+    <button id="reiniciar">Reiniciar</button>
+    <p id="indice"></p>
+    
+
+<script>
+    let ejecutar = document.getElementById('ejecutar');
+    let reiniciar = document.getElementById('reiniciar');
+    let busqueda=document.getElementById('busqueda')
+    ejecutar.addEventListener('click', function() {
+       let cadena=document.getElementById('cadena1').value;
+       let array=cadena.split(',');
+
+       for (let i = 0; i < array.length; i++) {
+    
+       if (array[i]==busqueda.value) {
+        document.getElementById('indice').textContent="Encontrado en posicion: "+ i;
+       } else{
+        alert("debes ingresar una parte correcta de la cadena");
+       }
+}
+       
+    
+       
+
+//document.getElementById('cadena').textContent="Resultado de la union: "+cadena   
+ });
+
+    reiniciar.addEventListener('click', function() {
+    document.getElementById('cadena1').value = "";
+    document.getElementById('busqueda').value = "";
+    document.getElementById('indice').textContent = "";
+});
+</script>
+
+</body>
+</html>
