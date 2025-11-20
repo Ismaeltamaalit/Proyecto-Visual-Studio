@@ -44,6 +44,25 @@ background-color: yellow;
   display: block;
 }
 
+ .submenu1{
+    display: none;
+    position: relative;
+}
+
+.submenu2{
+    display:none;
+    position:relative;
+}
+
+.a1:hover .submenu1{
+    display:block
+}
+.a2:hover .submenu2{
+    display:block
+}
+
+
+
 .seccion{
     overflow: hidden;
     overflow: auto;
@@ -113,6 +132,58 @@ background-color: yellow;
 #top3 img{
     width: 200px;
     display: inline-block;
+}
+
+#pais{
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+#pais:hover{
+    width: 350px;
+    height: 250px;
+}
+
+.esp{
+    background-image: url(https://media.admagazine.com/photos/63c9a4f6c0e0d93372ff71f8/master/w_1600%2Cc_limit/que-lugares-visitar-en-barcelona.jpg);
+    background-size: cover;
+}
+
+.chi{
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/20090529_Great_Wall_8185.jpg/1200px-20090529_Great_Wall_8185.jpg);
+background-size: cover;
+}
+
+.fra{
+    background-image: url(https://a.travel-assets.com/findyours-php/viewfinder/images/res70/84000/84621-Paris.jpg);
+    background-size: cover;
+}
+
+.welcome::before{
+    content: "🏠";
+}
+
+.beach::before{
+content:"🎡";
+}
+
+.mountain::before{
+    content:"🏞️";
+}
+
+.city::before{
+content:"🏢";
+}
+
+.hist::before{
+content:"🏰";
+}
+
+.top::before{
+content:"🗼"
 }
 
 
