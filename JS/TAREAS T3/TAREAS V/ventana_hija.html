@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub-Ventana</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Sub-Ventana</h1>
+        
+        <div class="input-group">
+            <label for="textInput">Introduzca texto a copiar en la ventana principal:</label>
+            <input type="text" id="textInput" placeholder="Escribe tu texto aquí...">
+        </div>
+        
+        <button id="sendBtn">Enviar texto a la ventana padre</button>
+        
+        <div class="status" id="status">
+            Estado: Esperando entrada de texto
+        </div>
+    </div>
+    
+    <footer>
+        Ventana hija - Envía información a la ventana padre
+    </footer>
+
+    <script>
+        const textInput = document.getElementById('textInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const status = document.getElementById('status');
+        
+        
+        sendBtn.addEventListener('click', function() {
+            const text = textInput.value.trim();
+            
+            if (text === '') {
+                status.textContent = 'Estado: Error - El texto no puede estar vacío';
+                status.style.backgroundColor = 'rgba(244, 67, 54, 0.3)';
+                return;
+            }
+            
+            try {
+                
+                if (window.opener && !window.opener.closed) {
+                    window.opener.receiveDataFromChild(text);
+                    status.textContent = 'Estado: Texto enviado correctamente a la ventana padre';
+                    status.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
+                    textInput.value = ''; 
+                } else {
+                    status.textContent = 'Estado: Error - No se puede acceder a la ventana padre';
+                    status.style.backgroundColor = 'rgba(244, 67, 54, 0.3)';
+                }
+            } catch (error) {
+                status.textContent = 'Estado: Error - No se pudo enviar el texto';
+                status.style.backgroundColor = 'rgba(244, 67, 54, 0.3)';
+                console.error('Error al enviar datos:', error);
+            }
+        });
+        
+        
+        textInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronómetro</title>
+    <style>
+        #cronometro {
+            font-size: 2rem;
+            font-family: monospace;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cronometro">00:00:00:000</div>
+    <button id="arrancar" onclick="inicio()">Arrancar</button>
+    <button id="parar" onclick="parar()" disabled>Parar</button>
+    <button id="continuar" onclick="inicio()" disabled>Continuar</button>
+    <button id="reiniciar" onclick="reinicio()" disabled>Reiniciar</button>
+
+    <script>
+        let horas = 0;
+        let minutos = 0;
+        let segundos = 0;
+        let milisegundos = 0;
+        let control;
+
+        function actualizarPantalla() {
+            let tiempoImprimible = 
+                (horas < 10 ? "0" + horas : horas) + ":" +
+                (minutos < 10 ? "0" + minutos : minutos) + ":" +
+                (segundos < 10 ? "0" + segundos : segundos) + ":" +
+                (milisegundos < 100 ? milisegundos.toString().padStart(3, "0") : milisegundos);
+            
+            document.getElementById("cronometro").innerHTML = tiempoImprimible;
+        }
+
+        function inicio() {
+            clearInterval(control);
+            control = setInterval(cronometro, 10);
+
+            document.getElementById("arrancar").disabled = true;
+            document.getElementById("parar").disabled = false;
+            document.getElementById("continuar").disabled = true;
+            document.getElementById("reiniciar").disabled = false;
+        }
+
+        function parar() {
+            clearInterval(control);
+            document.getElementById("parar").disabled = true;
+            document.getElementById("continuar").disabled = false;
+        }
+
+        function reinicio() {
+            clearInterval(control);
+            milisegundos = 0;
+            segundos = 0;
+            minutos = 0;
+            horas = 0;
+            actualizarPantalla();
+
+            document.getElementById("arrancar").disabled = false;
+            document.getElementById("parar").disabled = true;
+            document.getElementById("continuar").disabled = true;
+            document.getElementById("reiniciar").disabled = true;
+        }
+
+        function cronometro() {
+            milisegundos += 10;
+            if (milisegundos >= 1000) {
+                milisegundos = 0;
+                segundos++;
+            }
+            if (segundos >= 60) {
+                segundos = 0;
+                minutos++;
+            }
+            if (minutos >= 60) {
+                minutos = 0;
+                horas++;
+            }
+            actualizarPantalla();
+        }
+    </script>
+</body>
+</html>

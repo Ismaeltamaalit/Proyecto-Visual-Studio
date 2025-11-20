@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <title>document</title>
+    </head>
+    <body>
+     <div>
+        <label for="textoInput">Texto a invertir:</label>
+        <input type="text" id="textoInput" placeholder="Escribe algo aquí">
+        <button onclick="invertirTexto()">Invertir Texto</button>
+    </div>
+
+    <div id="resultado"></div>
+    <script>
+        function invertirTexto(){
+            let texto=document.getElementById('textoInput').value;
+            let resultado=document.getElementById('resultado');
+
+            let textoInvertido=texto.split('').reverse().join('');
+            resultado.textContent="Texto Invertido:" +textoInvertido;
+        }
+    </script>
+    </body>
+</html>

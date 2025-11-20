@@ -1,0 +1,147 @@
+.ej1{
+    text-decoration: underline;
+    color: aqua;
+    font-size: 2.1em;
+    text-shadow: 2px 2px black;
+    border: 2em solid;
+    border-width: 3px;
+
+}
+.img1{
+    
+    background-image: url(img1.jpeg);
+    background-attachment: fixed;
+    background-size: 350px 250px;
+    border:10px solid green;
+    box-shadow: 10px 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.img2{
+    margin-top: 50px;
+    padding:5px;
+    background-image: url(img2.jpeg);
+    background-attachment: fixed;
+    background-size: 350px 250px;
+    opacity: 50%;
+    box-shadow: 10px 0px 0px 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+
+}
+.img2:hover{
+    opacity: 10%;
+}
+.img1:hover{
+    opacity: 10%;
+}
+
+.ej3{
+    margin-top: 50px;
+    list-style-type: none;
+    background-color: bisque;
+    margin-right: 550px;
+    border:2px solid black;
+}
+.lista{
+    list-style-type: none;
+}
+.ej3 li{
+     border: 1px solid rgb(0, 0, 0);
+     margin-right: 50px;
+     background-color: rgb(236, 212, 176);
+/*
+Para el ejercicio 3, le puse un margen a la lista para
+lograr mas o menos una estructura similar a la de la imagen
+logrando así que el punto3 se rompa sin necesidad de 
+añadir más lineas
+*/
+}
+.ej4{
+       margin-top: 50px;
+       background-color: rgb(233, 203, 165);
+ 
+}
+/*
+Para el ejercicio 4 he diferenciado clases específicas 
+para el autor, el titulo, y la propia cita
+*/
+.autor{
+    text-align: center;
+    color:silver;
+    text-shadow: 2px 2px grey;
+}
+.cita{
+    border:2px dashed bisque;
+    padding-bottom: 100px;
+   
+
+    
+}
+.amor{
+    margin-top: -15px;
+    text-align: center;
+    background-color: burlywood;
+    margin-left: 300px;
+    margin-right: 300px;
+    color:white;
+    text-shadow: 2px 2px black;
+}
+.frase::first-letter{
+    text-transform: capitalize;
+    font-size: 50px;
+    color:rgb(224, 177, 115);
+}
+.ej6{
+    margin-top: 50px;
+}
+.pelis{
+    
+list-style-type: upper-roman;
+color:rgb(83, 167, 0)
+}
+#pelis1{
+background-color:aqua;
+}
+
+#pelis2{
+   background-color: burlywood;
+}
+#pelis3{
+    background-color:blueviolet;
+}
+#pelis4{
+    background-color:red;
+}
+
+.ej5{
+    margin-top: 50px;
+    background-color: antiquewhite;
+    color:antiquewhite;
+   text-decoration: underline dotted black;
+}
+
+.ej5:hover{
+    color:black;
+    text-decoration: underline dotted antiquewhite;
+}
+table{
+    border:2px solid black
+}
+.fila1{
+    background-color: aqua;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.fila2{
+    background-color: gold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fila0{
+    background-color: chartreuse;
+    font-weight: bolder;
+    color:white;
+}

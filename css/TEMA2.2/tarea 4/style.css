@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(172, 167, 167);
+    background-image: url(mv_1.jpg);
+    background-repeat: repeat-y;
+    background-position: left-top;
+    margin:50px auto;
+    padding-left: 201px;
+    font-family: sans-serif;
+    
+}
+
+#resumen, #personajes, #autor {
+    border: 5px solid black;
+    padding: 10px; 
+    margin: 10px 0;
+}
+
+h2{
+background-color: white;
+color:black;
+}
+h2::first-letter {
+    font-size: 2em;
+    color: gray;
+}
+
+h3{
+    color:white;
+    background-color: grey;
+    
+}
+
+.rick, .lori, .carl{
+    border: 5px solid black;
+    padding: 10px;
+    margin: 10px 0;
+    
+}
+.nombre-rick {
+    
+    background-color: white;
+   
+}
+
+.nombre-lori {
+   
+    
+    background-color: white;
+    
+}
+
+.nombre-carl {
+    
+    background-color: white;
+  
+}

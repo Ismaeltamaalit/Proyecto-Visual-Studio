@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Padre - Principal</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Ventana Padre - Principal</h1>
+        
+        <p class="description">
+            Esta página principal permite abrir una ventana hija, recibir información de ella y cerrarla.
+            La ventana hija puede enviar texto que se mostrará en esta ventana principal.
+        </p>
+        
+        <div class="buttons-container">
+            <button id="openChildBtn">Abrir Ventana Hija</button>
+            <button id="closeChildBtn" disabled>Cerrar Ventana Hija</button>
+        </div>
+        
+        <div class="info-display">
+            <h3>Información Recibida de la Ventana Hija:</h3>
+            <div id="receivedInfo">Aún no se ha recibido información.</div>
+        </div>
+        
+        <div class="status" id="status">
+            Estado: No hay ventana hija abierta
+        </div>
+        
+        <div class="instructions">
+            <h3>Instrucciones:</h3>
+            <ul>
+                <li>Haz clic en "Abrir Ventana Hija" para abrir una nueva ventana</li>
+                <li>En la ventana hija, escribe texto y haz clic en "Enviar texto a la ventana padre"</li>
+                <li>El texto aparecerá en la sección "Información Recibida"</li>
+                <li>Haz clic en "Cerrar Ventana Hija" para cerrar la ventana hija</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        Página creada para demostrar el intercambio de información entre ventanas
+    </footer>
+
+    <script>
+        let childWindow = null;
+        const openChildBtn = document.getElementById('openChildBtn');
+        const closeChildBtn = document.getElementById('closeChildBtn');
+        const status = document.getElementById('status');
+        const receivedInfo = document.getElementById('receivedInfo');
+        
+        
+        openChildBtn.addEventListener('click', function() {
+           
+            childWindow = window.open('ventana-hija.html', 'ChildWindow', 'width=600,height=400,left=300,top=150');
+            
+            if (childWindow) {
+                
+                openChildBtn.disabled = true;
+                closeChildBtn.disabled = false;
+                status.textContent = 'Estado: Ventana hija abierta correctamente';
+                status.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
+            } else {
+                status.textContent = 'Estado: Error al abrir la ventana hija (puede estar bloqueada por el navegador)';
+                status.style.backgroundColor = 'rgba(244, 67, 54, 0.3)';
+            }
+        });
+        
+        
+        closeChildBtn.addEventListener('click', function() {
+            if (childWindow && !childWindow.closed) {
+                childWindow.close();
+                
+                
+                openChildBtn.disabled = false;
+                closeChildBtn.disabled = true;
+                status.textContent = 'Estado: Ventana hija cerrada correctamente';
+                status.style.backgroundColor = 'rgba(33, 150, 243, 0.3)';
+            } else {
+                status.textContent = 'Estado: No hay ventana hija para cerrar';
+                status.style.backgroundColor = 'rgba(255, 152, 0, 0.3)';
+            }
+        });
+        
+       
+        window.receiveDataFromChild = function(data) {
+            receivedInfo.textContent = data;
+            receivedInfo.style.color = '#4CAF50';
+            receivedInfo.style.fontWeight = 'bold';
+            status.textContent = 'Estado: Información recibida de la ventana hija';
+            status.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
+        };
+    </script>
+</body>
+</html>

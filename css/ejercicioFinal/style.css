@@ -1,0 +1,45 @@
+body{
+    background-color: antiquewhite;
+    font-family: sans-serif;    
+    text-align: justify;
+}
+
+h1{
+    color:gray;
+    text-align: center;
+    text-transform: uppercase;
+}
+h2{
+    color:#DDDDDD;
+    background-color: #918356;
+    font-size: 150%;
+    width: 60%;
+    padding:1px 10px;
+    margin:auto;
+    margin-top: -0.5em;
+
+}
+
+div{
+  
+    float:left;
+    font-style: oblique;
+    height: 1lem;
+    line-height: 150%;
+    margin:10px;
+    overflow: visible;
+    width: 13em;
+    height: 250px;
+     background-color: #d3ba74;
+    color: rgb(5, 0, 0);
+    border: 2px dashed rgb(231, 213, 154);
+
+  
+}
+
+p::first-letter{
+    font-size: 200%;
+    float: left;
+    font-style: normal;
+    color: #ebdbaf;
+}

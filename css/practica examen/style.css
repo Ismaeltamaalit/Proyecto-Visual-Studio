@@ -1,0 +1,124 @@
+.nav-horizontal{
+text-align: center;
+border:2px solid gold;
+display:flex;
+flex-direction: row;
+
+
+}
+
+.nav-horizontal a{
+margin: 10px;
+background-color: yellow;
+  text-decoration: none;
+  border:2px solid black;
+  color:blue;
+   width: 120px;           
+   font-weight: bold;
+  height: 35px;  
+}
+
+body{
+    background-color: rgb(183, 183, 233);
+   
+}
+
+.menu-vertical a{
+margin: 10px;
+background-color: yellow;
+  text-decoration: none;
+  border:2px solid black;
+  color:blue;
+   width: 120px;           
+   font-weight: bold;
+  height: 35px;  
+  display: flex;
+}
+
+.desplegable-contenido{
+    display: none;
+    position: relative;
+}
+
+.desplegable:hover .desplegable-contenido {
+  display: block;
+}
+
+.seccion{
+    overflow: hidden;
+    overflow: auto;
+    float: left;
+}
+
+.contenido-central{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+
+}
+
+.seccion {
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    display: none; 
+    padding: 10px;
+}
+.seccion:target {
+    display: block;
+}
+.container {
+    display: flex;           
+    flex-direction: row;     
+    align-items: flex-start; 
+}
+
+.contenido-central{
+    background-color: azure;
+    border:2px solid gold;
+                     
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: flex-start;  
+    height: 80vh;            
+    overflow-y: auto;        
+    padding: 10px;
+}
+.menu-derecho {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 10px; 
+}
+
+.menu-derecho img {
+    width: 100px; 
+    height: auto; 
+}
+
+.logo img{
+    width: 100px;
+}
+
+#historia img{
+    float:right;
+    width: 200px;
+    
+}
+
+#top3 img{
+    width: 200px;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+

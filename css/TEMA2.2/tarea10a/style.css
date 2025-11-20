@@ -1,0 +1,44 @@
+
+h1{
+    text-align: center;
+}
+body{
+    background-color: grey;
+}
+div{
+    border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  padding: 20px auto;
+  margin: 20px ;
+  font-style: oblique;
+  width: 13em;
+  height: 250px;
+  color: rgb(5, 0, 0);
+  border: 2px solid rgb(255, 255, 254);
+
+  line-height: 150%;
+  text-align: center;
+}
+
+.div1{
+background-color: bisque;
+top: -50px;
+left:0;
+}
+.div2{
+    background: linear-gradient(red, blue);
+    
+
+}
+.div3{
+    background-color: greenyellow;
+}
+.div4{
+    background-color: rgb(185, 232, 235);
+}
+.div5{
+background-color: rgb(212, 183, 240);
+}
+.div6{
+    background-color: rgb(240, 163, 163);
+}

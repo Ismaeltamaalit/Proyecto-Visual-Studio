@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nombre">Introducir numeros enteros separados por comas:</label>
+    <input type="text" id="numero" name="numero">
+    <button id="boton1">calcular</button>
+    <button id="boton2">Reiniciar</button>
+    <p id="suma"></p>
+    <p id="media"></p>
+    <p id="mayor"></p>
+    <p id="menor"></p>
+
+<script>
+    let boton1 = document.getElementById('boton1');
+    let boton2 = document.getElementById('boton2');
+
+    boton1.addEventListener('click', function() {
+        let numeroArray = document.getElementById('numero').value;
+        let array = numeroArray.split(',').map(Number);
+
+        let suma = 0;
+
+        for (let n of array) {
+            suma += Number(n);
+        }
+
+        let media = suma / array.length;
+
+        document.getElementById('suma').textContent = "Suma: " + suma;
+        document.getElementById('media').textContent = "Media: " + media;
+        document.getElementById('mayor').textContent = "Mayor: " + Math.max(...array);
+        document.getElementById('menor').textContent = "Menor: " + Math.min(...array);
+    });
+
+    boton2.addEventListener('click', function() {
+        document.getElementById('numero').value = "";
+        document.getElementById('suma').textContent = "";
+        document.getElementById('media').textContent = "";
+        document.getElementById('mayor').textContent = "";
+        document.getElementById('menor').textContent = "";
+    });
+</script>
+
+</body>
+</html>

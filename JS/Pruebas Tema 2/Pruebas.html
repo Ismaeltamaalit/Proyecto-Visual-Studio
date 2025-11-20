@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const enemies = [
+{ id: "SKELETON", name: "Esqueleto" },
+{ id: "SPECTRE", name: "Espectro" },
+{ id: "GHOST", name: "Fantasma" }
+];
+const addEnemy = (id, name) => {
+enemies.push({ id, name });
+}
+// Añadimos nuevo esqueleto a la lista de enemigos
+addEnemy("SKELETON", "Esqueleto resplandeciente");
+const findEnemyById = (id) => {
+return enemies.find(enemy => enemy.id === id);
+}
+console.log(findEnemyById("SKELETON")); // Devuelve { id: "SKELETON", name: "Esqueleto" }
+console.log(enemies);
+
+</script>
+</body>
+</html>

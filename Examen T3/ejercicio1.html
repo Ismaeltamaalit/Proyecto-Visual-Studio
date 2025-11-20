@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 Examen T3</title>
+</head>
+<body>
+    <script>
+       //para crear el numero random he hecho Math.random y el numero
+    let random = Math.floor(Math.random() * 40) + 1;
+
+    let errores=0;
+    let adivinar=0;
+    do {
+        //he hecho varios if para poder hacer una comprobación más eficaz de la condicion
+        
+         adivinar=Number(prompt("¿Que numero tengo guardado?"));
+        console.log("Numero aleatorio generado para probar: "+random);
+        if(isNaN(adivinar)){
+            alert("tienes que insertar un numero");
+        }else{
+            if(adivinar==random){
+                document.write("El numero que insertaste era: "+adivinar+ " y el numero aleatorio a adivinar era: "+random+" .¡Felicidades!"+"</br>");
+
+            }else if(adivinar >= random){
+                alert("el numero insertado es mayor que random");
+                errores++;
+            }else if(adivinar<= random){
+                alert("el numero es menor que el random a adivinar");
+                errores++;
+            }
+        }
+    } while (random!=adivinar);
+    document.write("tus intentos"+ errores);
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    let alto=prompt("escribe en centimetros, sin cm, el alto de tu television");
+    let ancho=prompt("Escribe el ancho de tu television");
+
+    pulgadas=Math.sqrt(Math.pow(alto,2)-Math.pow(ancho,2))/2.54;
+    document.write("tu televisión tiene:"+pulgadas);
+  </script>  
+</body>
+</html>

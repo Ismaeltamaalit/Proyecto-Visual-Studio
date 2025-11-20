@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+<input type="text" id="input1">
+<button id="btn1">Click me</button>
+<textarea id="area1"></textarea>
+
+
+<script>
+     const input=document.getElementById('input1');
+     const button=document.getElementById('btn1');
+     const textarea=document.getElementById('area1');
+     
+     input.addEventListener('focus', (e) => {
+    console.log(`Foco en: ${e.target.id}`);
+});
+
+button.addEventListener('mouseover', (e) => {
+    console.log(`El ratón está sobre: ${e.target.id}`);
+});
+
+textarea.addEventListener('keydown', (e) => {
+    console.log(`Escribiendo en: ${e.target.id}, tecla: ${e.key}`);
+});
+
+        
+</script>
+    </body>
+</html>

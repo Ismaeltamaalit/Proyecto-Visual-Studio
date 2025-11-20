@@ -1,0 +1,51 @@
+ol.triunvirato{
+    list-style-type: upper-roman;
+    background-color: antiquewhite;
+    color:darkcyan;
+}
+ul.cosica{
+    list-style-type: none;
+    background-color: bisque;
+    padding-left: 0;
+}
+
+ul.emperador{
+    list-style-type: square;
+    background-color: blanchedalmond;
+    color:red;
+}
+
+ul.lista{
+    background-color: aquamarine;
+    color:brown;
+    padding-left: 0;
+    list-style-type: none;
+
+
+}
+
+li.cosa1{
+    border-style: dotted;
+    border-color: aquamarine;
+    font-family: fantasy;
+}
+li.cosa2{
+    border-style: dotted;
+    border-color:blanchedalmond;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+li.cosa3{
+    border-style:double;
+    border-color:chartreuse;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+li.cosa4{
+    border-style: inherit;
+    border-color:black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+li.cosa5{
+    border-style:groove;
+    border-color:burlywood;
+    font-family: 'Courier New', Courier, monospace;
+}

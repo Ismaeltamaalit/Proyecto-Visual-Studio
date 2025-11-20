@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+   
+</head>
+<body>
+    <h1>Comprobador de Códigos Postales</h1>
+    
+    <div class="form-group">
+        <label for="postalInput">Código Postal (5 dígitos):</label>
+        <input type="text" id="postalInput" placeholder="Ej: 30001" maxlength="5">
+        <button onclick="comprobarPostal()">Comprobar</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        function comprobarPostal() {
+            let codigoPostal = document.getElementById('postalInput').value;
+            let resultado = document.getElementById('resultado');
+            
+            
+            if (!/^\d{5}$/.test(codigoPostal)) {
+                resultado.textContent = "Error: El código postal debe tener exactamente 5 dígitos numéricos";
+                resultado.className = "error";
+                return;
+            }
+            
+            
+            let dosPrimeros = codigoPostal.substring(0, 2);
+            
+            
+            if (dosPrimeros === "30") {
+                resultado.textContent = "📍 Este código postal es de MURCIA";
+                resultado.className = "murcia";
+            } else if (dosPrimeros === "03") {
+                resultado.textContent = "📍 Este código postal es de ALICANTE";
+                resultado.className = "alicante";
+            } else {
+                resultado.textContent = "📍 Este código postal es de OTRA localidad";
+                resultado.className = "otro";
+            }
+        }
+    </script>
+</body>
+</html>

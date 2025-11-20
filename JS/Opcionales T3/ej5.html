@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let errores=0;
+                    let random = Math.floor(Math.random() * 100) + 1;
+
+                    let adivinar= prompt("escribe numero que creas que es, de uno a 100");
+                    console.log("Número secreto (para debug):", random); // Para probar
+                    adivinar=parseInt(adivinar);
+
+                if(isNaN(adivinar)){
+                    document.write("Ingresa un numero valido o mayor que cero")
+
+                    }else{
+                        document.write("EL numero que has insertado es "+ adivinar);
+
+                        if(adivinar ==random){
+                            document.write("El numero random era: "+random);
+                            
+                        }else{
+                            document.write("erorr");
+                            errores +=1;
+                            document.write("errores"+errores);
+                            
+                        }
+                    }
+                
+    </script>
+</body>
+</html>

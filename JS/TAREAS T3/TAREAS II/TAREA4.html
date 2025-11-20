@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador Alternativo</title>
+    
+</head>
+<body>
+    <h1>Contador de Texto - Enfoque Alternativo</h1>
+    <textarea id="texto">Ejemplo con 123 números y varias palabras."</textarea>
+    <div class="stats" id="estadisticas"></div>
+
+    <script>
+        
+        function analizarTexto(texto) {
+            let stats = {
+                caracteres: texto.length,
+                sinEspacios: 0,
+                palabras: 0,
+                numeros: 0,
+                letras: 0,
+                espacios: 0,
+                simbolos: 0
+            };
+            
+            let enPalabra = false;
+            
+            for (let char of texto) {
+                if (char === ' ') {
+                    stats.espacios++;
+                    enPalabra = false;
+                } else {
+                    stats.sinEspacios++;
+                    
+                    if (/\d/.test(char)) {
+                        stats.numeros++;
+                    } else if (/[a-záéíóúñ]/i.test(char)) {
+                        stats.letras++;
+                        if (!enPalabra) {
+                            stats.palabras++;
+                            enPalabra = true;
+                        }
+                    } else {
+                        stats.simbolos++;
+                        enPalabra = false;
+                    }
+                }
+            }
+            
+            return stats;
+        }
+        
+        function actualizarEstadisticas() {
+            const texto = document.getElementById('texto').value;
+            const stats = analizarTexto(texto);
+            const contenedor = document.getElementById('estadisticas');
+            
+            contenedor.innerHTML = `
+                <div class="stat">Caracteres: ${stats.caracteres}</div>
+                <div class="stat">Sin espacios: ${stats.sinEspacios}</div>
+                <div class="stat">Palabras: ${stats.palabras}</div>
+                <div class="stat">Números: ${stats.numeros}</div>
+                <div class="stat">Letras: ${stats.letras}</div>
+                <div class="stat">Espacios: ${stats.espacios}</div>
+                <div class="stat">Símbolos: ${stats.simbolos}</div>
+            `;
+        }
+        
+        document.getElementById('texto').addEventListener('input', actualizarEstadisticas);
+        actualizarEstadisticas();
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+
+    <script>    
+
+   /**
+    * como no recuerdo como dejarlo como archivo independiente, lo dejo así
+    * Este codigo lo que hace es pedir tres datos númericos, una validación
+    * y los une como cadena, para luego hacer el calculo
+    * Se que no es como se pedia, pero no me sale de otra forma
+    **/
+   let num1=Number(prompt("Introduce un numero"));
+        let num2=Number(prompt("Introduce un numero"));
+        let num3=Number(prompt("Introduce un numero"));
+
+        let cadena=[num1, num2, num3];
+
+        if(isNaN(num1)||isNaN(num2)||isNaN(num3)){
+            document.write("Los numeros insertados no son validos")
+        }else{
+           document.write("la suma de la cadena de datos es: ");
+        document.write(cadena[0]+cadena[1]+cadena[2]) 
+        }
+        
+
+        
+    </script>
+</body>
+</html>

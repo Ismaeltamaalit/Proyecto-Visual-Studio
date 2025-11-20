@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 12</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Abrir y Cerrar Ventana</h1>
+        
+        <p class="description">
+            Esta página te permite abrir una nueva ventana con Google y cerrarla posteriormente.
+            Utiliza los botones a continuación para controlar la ventana.
+        </p>
+        
+        <div class="buttons-container">
+            <button id="openBtn">Crear nueva ventana</button>
+            <button id="closeBtn" disabled>Cerrar nueva ventana</button>
+        </div>
+        
+        <div class="status" id="status">
+            Estado: No hay ventana abierta
+        </div>
+        
+        <div class="instructions">
+            <h3>Instrucciones:</h3>
+            <ul>
+                <li>Haz clic en "Crear nueva ventana" para abrir Google en una nueva ventana</li>
+                <li>Haz clic en "Cerrar nueva ventana" para cerrar la ventana abierta</li>
+                <li>El botón de cerrar solo estará disponible cuando haya una ventana abierta</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        Página creada para demostrar la funcionalidad de abrir y cerrar ventanas
+    </footer>
+
+    <script>
+        let nuevaVentana = null;
+        const openBtn = document.getElementById('openBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const status = document.getElementById('status');
+        
+        openBtn.addEventListener('click', function() {
+            
+            nuevaVentana = window.open('https://www.google.com', 'GoogleWindow', 'width=800,height=600,left=200,top=100');
+            
+            if (nuevaVentana) {
+                
+                openBtn.disabled = true;
+                closeBtn.disabled = false;
+                status.textContent = 'Estado: Ventana abierta correctamente';
+                status.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
+            } else {
+                status.textContent = 'Estado: Error al abrir la ventana (puede estar bloqueada por el navegador)';
+                status.style.backgroundColor = 'rgba(244, 67, 54, 0.3)';
+            }
+        });
+        
+        closeBtn.addEventListener('click', function() {
+            if (nuevaVentana && !nuevaVentana.closed) {
+                nuevaVentana.close();
+                
+          
+                openBtn.disabled = false;
+                closeBtn.disabled = true;
+                status.textContent = 'Estado: Ventana cerrada correctamente';
+                status.style.backgroundColor = 'rgba(33, 150, 243, 0.3)';
+            } else {
+                status.textContent = 'Estado: No hay ventana para cerrar';
+                status.style.backgroundColor = 'rgba(255, 152, 0, 0.3)';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+body{
+    background-color: aqua;
+}
+
+h1{
+    font-weight: bold;
+}
+
+.enero{
+    background-color: rgb(233, 230, 185);
+    width: 650px;
+    
+    border-collapse: collapse;
+    
+    border: none;
+}
+
+.dias1 td{
+    font-weight: bold;
+    text-align: center;
+    font-style:oblique;
+    font-weight: bold;
+    letter-spacing: 5px;
+
+}
+.enero td{
+    
+    border: none;
+    border-bottom: black 1px solid; 
+    text-align:center;
+    font-weight: bold;
+}
+
+
+
+.febrero{
+    background-color: rgb(211, 208, 168);
+    width: 450px;
+    
+    border-top: none;
+    border-bottom: none; 
+    border-left: 3px solid grey;
+    border-right: 3px solid grey; 
+    
+    border-collapse: collapse; 
+}
+.dias2 td{
+    font-weight: bold;
+    text-align: right;
+}
+
+
+.febrero td{
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom:hidden;
+    border-top:hidden;
+    font-weight: bold;
+    font-size: 150%;
+    padding-right: 5px;
+    width: 1.5em;
+}
+.marzo{
+    background-color: rgb(228, 223, 176);
+    width: 650px;
+    
+    border-collapse: collapse;
+}
+.dias3 td{
+    font-weight: bold;
+    text-align: center;
+    height: 25px;
+}
+.marzo td{
+    border: 2px solid black; 
+    font-size: 8px;
+    height: 45px;
+    text-align: left;
+}
+
+.febrero1{
+    background-color: rgb(211, 208, 168);
+    width: 450px;
+    
+    
+}
+.dias2a td{
+    font-weight: bold;
+    text-align: right;
+}
+
+
+.enero .caption{
+    background-color: grey;
+    color: white;
+
+}
+
+.enero1{
+    background-color: rgb(233, 230, 185);
+    width: 500px;
+    
+    
+    
+    border: none;
+}
+.enero1 .blanco{
+    background-color: white;
+}
+
+ .enero1 .gris{
+    background-color: grey;
+    text-align: center;
+    font-style:oblique;
+    font-weight: bold;
+    letter-spacing: 5px;
+
+}
+.enero1 td{
+    
+    border: none;
+    text-align:center;
+    font-weight: bold;
+}

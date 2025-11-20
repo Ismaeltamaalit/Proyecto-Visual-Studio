@@ -1,0 +1,53 @@
+body{
+    background-image: url(../im4.jpg);
+    background-position: left-top;
+    background-repeat: no-repeat;
+    div{
+        max-width: 650px;
+        margin:20px auto;
+        padding:20px;
+        color:red;
+        box-sizing: border-box;
+        font-size:1rem
+    }
+}
+
+.div1{
+    background-color:rgba(0,0,255,0.5);
+    border:2px solid blue;
+    opacity:0.2;
+    text-shadow: 2px 2px 4px #000000;
+    max-width: 300px;
+    word-wrap: break-word;
+}
+.div2{
+    background-color:rgba(0,255,0,0.5);
+    border:2px solid green;
+    opacity:0.5;
+    text-shadow: 1px 1px 2px #000000;
+    max-width: 300px;
+    word-break: keep-all;
+
+}
+.div3{
+    background-color:rgba(255,0,0,0.5);
+    border:2px solid red;
+    opacity:0.9;
+    text-shadow: 3px 3px 6px #000000;
+    max-width: 300px;
+    word-break: keep-all;
+
+}
+
+
+.div1:hover {
+    opacity: 1;
+}
+
+.div2:hover {
+    opacity: 0.5;
+}
+
+.div3:hover {
+    opacity: 0.7;
+}

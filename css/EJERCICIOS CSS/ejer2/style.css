@@ -1,0 +1,54 @@
+.fecha {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  background-color: grey;
+  margin: 0 auto;       
+  width: 150px;
+  text-align: center;
+  
+  
+}
+
+
+h2{
+    font-weight: bold;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+p{
+    margin-left:20%;
+    margin-right:20%;
+}
+    
+body{
+    background-color: whitesmoke;
+    margin: 0 0 2em;
+    font-family:  sans-serif;
+    text-align: justify;
+}
+
+p strong{
+   
+    font-variant: small-caps;
+}
+p q{
+    border-bottom-color: red;
+    border-bottom-style: dashed;
+}
+span{
+    background-color: white;
+    font-color: red;
+}
+
+h1{
+    text-align: right;
+background-color: black;    
+color: white;
+    margin-bottom: 0px;
+    padding: 10px;
+    
+}

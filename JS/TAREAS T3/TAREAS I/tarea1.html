@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+</head>
+<body>
+
+    <div id="reloj">00:00:00</div>
+
+    <script>
+        function reloj() {
+            let miFecha = new Date();
+            let horas = miFecha.getHours();
+            let minutos = miFecha.getMinutes();
+            let segundos = miFecha.getSeconds();
+            let dia=miFecha.getDate();
+            let mes=miFecha.getMonth()+1;
+            let anio=miFecha.getFullYear();
+            
+
+            if (horas === 0) horas = 12; 
+
+            if (horas < 10) horas = "0" + horas;
+            if (minutos < 10) minutos = "0" + minutos;
+            if (segundos < 10) segundos = "0" + segundos;
+
+            let horaImprimible = dia + "/" + mes + "/" + anio+ " "+ horas + ":" + minutos + ":" + segundos;
+            document.getElementById("reloj").innerHTML = horaImprimible;
+        }
+
+        window.onload = function() {
+            reloj(); 
+            setInterval(reloj, 1000); 
+        };
+    </script>
+
+</body>
+</html>

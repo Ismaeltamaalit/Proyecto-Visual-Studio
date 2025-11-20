@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let radio=prompt("escribe el radio de tu circunferencia");
+        
+radio=parseFloat(radio);
+
+        let area= Math.PI*radio**2;
+        let longitud=2*Math.PI*radio;
+        let volumen=4/3*Math.PI*radio**3;
+
+       
+        let areaRedondeada=area.toFixed(2);
+        let longitudRedondeado=longitud.toFixed(2);
+        let volumenRedondeado=volumen.toFixed(2);
+
+        document.write("radio ingresado:" + radio);
+        document.write("Area del círculo:"+areaRedondeada+"<br>");
+        
+        document.write("Longitud del circulo: "+longitudRedondeado+"<br>")
+        document.write("Volumen del circulo: " +volumenRedondeado+"<br>");
+    </script>
+</body>
+</html>
