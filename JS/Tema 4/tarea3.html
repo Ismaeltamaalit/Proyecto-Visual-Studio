@@ -16,6 +16,7 @@
     <button id="ejecutar">Buscar</button>
     <button id="reiniciar">Reiniciar</button>
     <p id="indice"></p>
+    <p id="error" style="color: red;"></p>
     
 
 <script>
@@ -25,13 +26,14 @@
     ejecutar.addEventListener('click', function() {
        let cadena=document.getElementById('cadena1').value;
        let array=cadena.split(',');
+           document.getElementById('error').textContent = ""; 
 
        for (let i = 0; i < array.length; i++) {
     
        if (array[i]==busqueda.value) {
         document.getElementById('indice').textContent="Encontrado en posicion: "+ i;
        } else{
-        alert("debes ingresar una parte correcta de la cadena");
+        document.getElementById('error').textContent="Inserta un elemento correcto de la cadena seleccionada";
        }
 }
        
@@ -45,6 +47,7 @@
     document.getElementById('cadena1').value = "";
     document.getElementById('busqueda').value = "";
     document.getElementById('indice').textContent = "";
+    document.getElementById('error').textContent = "";
 });
 </script>
 
