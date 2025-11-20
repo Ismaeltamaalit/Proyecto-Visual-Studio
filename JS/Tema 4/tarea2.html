@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nombre">Introducir dos cadenas a unir: </label>
+    <input type="text" id="cadena1" name="cadena1">
+    <input type="text" id="cadena2" name="cadena2">
+
+    <button id="boton1">Unir</button>
+    <button id="boton2">Reiniciar</button>
+    <p id="cadena"></p>
+    
+
+<script>
+    let boton1 = document.getElementById('boton1');
+    let boton2 = document.getElementById('boton2');
+    let cadena=0;
+    boton1.addEventListener('click', function() {
+       let conca1=document.getElementById('cadena1').value;
+       let conca2=document.getElementById('cadena2').value;
+    
+       cadena=conca1+conca2
+
+document.getElementById('cadena').textContent="Resultado de la union: "+cadena   
+ });
+
+    boton2.addEventListener('click', function() {
+        document.getElementById('cadena1').value="";
+        document.getElementById('cadena2').value="";
+        document.getElementById('cadena').value="";
+
+
+    });
+</script>
+
+</body>
+</html>
