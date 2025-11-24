@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <label for="nombre">Introducir numeros enteros separados por comas:</label>
+    <input type="text" id="texto" name="texto">
+    <button id="boton1">Insertar</button>
+    <button id="boton2">Quitar</button>
+    <button id="boton3">Reiniciar</button>
+
+    
+    
+    <script>
+
+        let miArray=[];
+    let boton1 = document.getElementById('boton1');
+    let boton2 = document.getElementById('boton2');
+    let boton3= document.getElementById('boton3');
+    
+    boton1.addEventListener('click', function(){
+        let texto=document.getElementById('texto').value;
+        let array=texto.split(',');
+
+        array.forEach(texto => {
+            
+        });
+
+
+
+    });
+
+    </script>
+</body>
+</html>
