@@ -6,6 +6,63 @@
     <title>Document</title>
 </head>
 <body>
+    <label for="nombre">Introducir cadenas separadas por comas: </label>
+    <br><br>
+    <label for="cadena1">cadena con comas</label>
+    <input type="text" id="cadena1" name="cadena1">
+    <label for="nuevo">Nuevo elemento:</label>
+    <input type="text" id="nuevo" name="nuevo">
+    <label for="pos">Insertar en posicion (0-based):</label>
+    <input type="number" id="pos" name="pos" min="0">
+    <br>
+    <button id="insertar">Insertar</button>
+    <button id="reiniciar">Reiniciar</button>
+    <p id="resultado"></p>
+    <p id="error" style="color: red;"></p>
     
+
+<script>
+        // Implementación: insertar sin usar splice
+         let insertar = document.getElementById('insertar');
+        let reiniciar = document.getElementById('reiniciar');
+        insertar.addEventListener('click', function() {
+             const cadena = document.getElementById('cadena1').value;
+             const nuevo = document.getElementById('nuevo').value;
+             const pos = parseInt(document.getElementById('pos').value, 10);
+             document.getElementById('error').textContent = "";
+
+             if (!cadena) {
+                 document.getElementById('error').textContent = 'Introduce la cadena con comas.';
+                 return;
+             }
+             const array = cadena.split(',');
+             if (isNaN(pos) || pos < 0 || pos > array.length) {
+                 document.getElementById('error').textContent = 'Posición inválida. Debe estar entre 0 y ' + array.length;
+                 return;
+             }
+
+             
+             const left = array.slice(0, pos);
+             const right = array.slice(pos);
+             const resultado = left.concat([nuevo], right);
+
+             document.getElementById('resultado').textContent = 'Array resultante: [' + resultado.join(',') + ']';
+        });
+       
+    
+       
+
+//document.getElementById('cadena').textContent="Resultado de la union: "+cadena   
+    // });
+
+    reiniciar.addEventListener('click', function() {
+    document.getElementById('cadena1').value = "";
+    document.getElementById('nuevo').value = "";
+    document.getElementById('pos').value = "";
+    document.getElementById('resultado').textContent = "";
+    document.getElementById('error').textContent = "";
+    });
+    </script>
+
 </body>
 </html>
