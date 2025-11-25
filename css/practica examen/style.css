@@ -1,21 +1,50 @@
 .nav-horizontal{
-text-align: center;
-border:2px solid gold;
-display:flex;
-flex-direction: row;
-
-
+    text-align: center;
+    border: 2px solid gold;
+    display: flex;
+    flex-direction: row; /* Asegurar que sea horizontal */
+    justify-content: center; /* Centrar los elementos */
+    align-items: center;
+    flex-wrap: wrap; /* Para que sea responsive */
+    padding: 10px;
 }
 
 .nav-horizontal a{
-margin: 10px;
-background-color: yellow;
-  text-decoration: none;
-  border:2px solid black;
-  color:blue;
-   width: 120px;           
-   font-weight: bold;
-  height: 35px;  
+    margin: 10px;
+    background-color: yellow;
+    text-decoration: none;
+    border: 2px solid black;
+    color: blue;
+    width: 120px;
+    font-weight: bold;
+    height: 35px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mantener el menú vertical como está */
+.menu-vertical {
+    display: flex;
+    flex-direction: column; /* Este SÍ debe ser vertical */
+}
+
+.menu-vertical a{
+    margin: 10px;
+    background-color: yellow;
+    text-decoration: none;
+    border: 2px solid black;
+    color: blue;
+    width: 120px;
+    font-weight: bold;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 8px;
 }
 
 body{
@@ -23,17 +52,7 @@ body{
    
 }
 
-.menu-vertical a{
-margin: 10px;
-background-color: yellow;
-  text-decoration: none;
-  border:2px solid black;
-  color:blue;
-   width: 120px;           
-   font-weight: bold;
-  height: 35px;  
-  display: flex;
-}
+
 
 .desplegable-contenido{
     display: none;
@@ -102,6 +121,7 @@ background-color: yellow;
 
 }
 
+
 .seccion {
     position: absolute;
     
@@ -140,8 +160,18 @@ background-color: yellow;
 }
 
 .menu-derecho img {
-    width: 100px; 
-    height: auto; 
+    width: 100px;
+    height: auto;
+    animation: latido 4s ease-in-out infinite;
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
 }
 
 .logo img{
@@ -159,17 +189,20 @@ background-color: yellow;
     display: inline-block;
 }
 
-#pais{
+#pais {
     width: 300px;
     height: 200px;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    
+    transition: all 0.5s ease;
+    background-size: cover;
+    background-position: center;
 }
 
-#pais:hover{
+#pais:hover {
     width: 350px;
     height: 250px;
+    transform: scale(1.05);
 }
 
 .esp{
