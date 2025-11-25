@@ -2,10 +2,10 @@
     text-align: center;
     border: 2px solid gold;
     display: flex;
-    flex-direction: row; /* Asegurar que sea horizontal */
-    justify-content: center; /* Centrar los elementos */
+    flex-direction: row; 
+    justify-content: center; 
     align-items: center;
-    flex-wrap: wrap; /* Para que sea responsive */
+    flex-wrap: wrap; 
     padding: 10px;
 }
 
@@ -25,10 +25,10 @@
     justify-content: center;
 }
 
-/* Mantener el menú vertical como está */
+
 .menu-vertical {
     display: flex;
-    flex-direction: column; /* Este SÍ debe ser vertical */
+    flex-direction: column; 
 }
 
 .menu-vertical a{
