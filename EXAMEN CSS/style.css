@@ -8,6 +8,8 @@
 
 body{
     background-color: rgb(189, 187, 187);
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .menu{
@@ -19,40 +21,67 @@ body{
 }
 
 .elemento{
+    display: inline-block;
     background-color: aliceblue;
-     height: 20px;
-     width: 20px;
-    color:black;
-     border-top: 2px blue solid ;
-     border-bottom: 2px blue solid;
-     padding: 15px;
-     margin: 10px;
-     text-decoration: none;
+    color: black;
+    border: 2px solid blue;
+    padding: 8px 14px;
+    margin: 6px;
+    text-decoration: none;
+    border-radius: 4px;
 }
 
 .elemento:hover{
-    background-color: blue;
+    background-color: rgb(78, 109, 212);
+    color: #fff;
 }
 
 .intro{
      background-color: blue;
     color:white;
-    width: 600px;
+    max-width: 600px;
     text-align: center;
-    margin-left: 500px;
+    margin: 0 auto 1em auto;
+    padding: 10px;
 }
 
-#i1{
-    width: 350px;
-    height: 500px;
-    
-    border:1px blue solid;
+/* Imágenes: tamaño grande, borde azul y fondo blanco; colocadas a los lados */
+#i1, #i2, #i3, #i4, #i5{
+    max-width: 48%;
+    width: 48%;
+    height: auto;
+    background: #fff;
+    padding: 8px;
+    border: 6px solid #2f62d6; /* borde azul ancho */
+    box-sizing: border-box;
+    margin: 0.8em 0;
 }
 
-#i2 {
-    width: 350px;
-    height: 500px;
-    border:1px blue solid;
+/* Alternar imágenes a los lados */
+#i1, #i3, #i5{
+    float: left;
+    margin-right: 2%;
+}
+#i2, #i4{
+    float: right;
+    margin-left: 2%;
+}
+
+/* Clearfix para que los contenedores crezcan con los floats */
+.seccion-central::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Móvil: quitar floats y hacer imágenes a ancho completo */
+@media (max-width: 800px){
+    #i1, #i2, #i3, #i4, #i5{
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 0.6em 0;
+    }
 }
 
 .puerta{
@@ -71,22 +100,26 @@ color:white;
 
 
 .seccion-central{
-    width: 80vh;
-    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1em 2em 1em;
+    box-sizing: border-box;
+    text-align: left;
 }
 
 
 .introduccion{
     display:none;
-
+    padding: 1em 0;
 }
 
 .introduccion:target{
-    display:flex;
+    display:block;
 }
 
 .puerta-del-sol{
     display:none;
+    padding: 1em 0;
 }
 
 .puerta-del-sol:target{
@@ -95,6 +128,7 @@ color:white;
 
 .plaza-mayor{
     display:none;
+    padding: 1em 0;
 }
 
 .plaza-mayor:target{
@@ -103,54 +137,47 @@ color:white;
 
 .retiro{
     display: none;
+    padding: 1em 0;
 }
 
 .retiro:target{
     display:block;
 }
 
+/* i3 previously had a huge left margin; center images instead */
 #i3{
-    width: 350px;
-    height: 500px;
-    
-   
-   margin-left: 80em;
+    max-width: 100%;
+    height: auto;
+    margin: 0.8em auto;
 }
 
-#i4{
-     width: 350px;
-    height: 500px;
-    
-    border:1px blue solid;
-}
-
-#i5{
-     width: 350px;
-    height: 500px;
-    
-    border:1px blue solid;
-}
+/* i4 and i5 are handled by the grouped image rule above */
 
 .end{
     background-color: blue;
     color:white;
-    text-align: end;
+    text-align: center;
+    padding: 12px 0;
 }
 
 .lista{
     list-style-image: url(oso.jpeg);
+    margin-left: 1.2em;
 }
 
 .etiqueta{
     color:red;
     text-transform: uppercase;
-    
+    margin-right: 6px;
 }
 
 .fecha{
-    color:gold;
-    border-top: 1px red solid;
-    border-bottom: 1px red solid;
+    color: gold;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    display: inline-block;
+    padding: 0 6px;
+    margin: 0 6px;
 }
 
 
