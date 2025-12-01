@@ -9,7 +9,6 @@
    <label for="nombre">Introduce un elemento:</label>
     <input type="text" id="texto" name="texto">
     <button id="boton1">Insertar</button>
-    <button id="boton2">Quitar</button>
     <button id="boton3">Reiniciar</button>
 
     
@@ -26,28 +25,21 @@
         let array=texto.split(',');
 
         array.forEach(texto => {
-            let elementoLimpio = itemTexto.trim();
+            let elementoLimpio = texto.trim();
             
     if (elementoLimpio !== '') {
         
         miArray.push(elementoLimpio);
     }
         });
+         miArray.sort();
         document.getElementById('texto').value = '';
 
-        mostrarArray();
+       mostrarArray();
 
     });
 
-    boton2.addEventListener('click',function(){
-        if(miArray.length>0){
-            miArray.pop();
-        }
-        mostrarArray();
-
-    });
-
-    boton3.addEventListener('click', function(){
+    boton2.addEventListener('click', function(){
         miArray=[];
 
         document.getElementById('texto').value='';
@@ -56,7 +48,7 @@
 
     });
 
-    function mostrarArray() {
+     function mostrarArray() {
     console.log("--- Contenido Actual del Array ---");
 
     // **Usar forEach()** para recorrer e imprimir cada elemento
@@ -66,6 +58,8 @@
 
     console.log("----------------------------------");
 }
+
+    
 
     </script>
 </body>
