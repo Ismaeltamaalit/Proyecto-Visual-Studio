@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Rectangulo{
+            constructor(alto, ancho){
+                this.alto=alto;
+                this.ancho=ancho;
+            }
+            calculoArea(){
+                return this.alto*this.ancho
+            }
+            
+        }
+
+        const miRectangulo= new Rectangulo(15,30);
+        const area=miRectangulo.calculoArea();
+
+        console.log("El area del rectangulo es "+ area)
+    </script>
+</body>
+</html>

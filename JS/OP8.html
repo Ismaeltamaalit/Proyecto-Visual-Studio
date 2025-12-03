@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class CuentaBancaria{
+            constructor(titular, saldo){
+                this.titular=titular;
+                this.saldo=saldo;
+            }
+            depositar(monto){
+                this.saldo=this.saldo+monto;
+                return "deposito exitoso, Nuevo saldo de "+this.titular +" "+this.saldo;
+            }
+            retirar(monto){
+                this.saldo -=monto;
+                return "Retiro exitoso. Nuevo saldo de "+titular+" "+saldo
+            }
+            consultarSaldo() {
+        return `El saldo actual de ${this.titular} es: ${this.saldo}`;
+    }
+        }
+
+        const miCuenta = new CuentaBancaria("Juan Pérez", 100);
+
+console.log(miCuenta.consultarSaldo()); // Muestra: El saldo actual de Juan Pérez es: 100
+
+console.log(miCuenta.depositar(50));
+
+console.log(miCuenta.retirar(20));
+
+console.log(miCuenta.retirar(200));
+
+    </script>
+</body>
+</html>
