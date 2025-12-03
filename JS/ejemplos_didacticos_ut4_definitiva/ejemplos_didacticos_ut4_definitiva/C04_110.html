@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C04_110</title>
+</head>
+
+<body>
+    <script>
+        /*  El spread operator también se puede usar con strings en JavaScript, 
+        ya que las cadenas de texto son iterables, igual que los arrays
+        */
+        // Ejemplo combinar strings carácter por carácter
+
+        const saludo = "Hola";
+        const extra = " :)";
+
+        const combinado = [...saludo, ...extra].join('');
+        console.log(combinado); // "Hola :)"
+
+
+    </script>
+</body>
+
+</html>

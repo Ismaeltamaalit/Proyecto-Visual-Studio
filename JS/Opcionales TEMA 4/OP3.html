@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [1, 23, 45, 1, 67, 78, 89, -11];
+
+const arraySinDuplicadosFilter = array.filter((elemento, indice) => {
+    
+    return array.indexOf(elemento) === indice;
+});
+
+console.log("Original: ", array);
+console.log("Resultado (Filter):", arraySinDuplicadosFilter);
+
+    </script>
+</body>
+</html>

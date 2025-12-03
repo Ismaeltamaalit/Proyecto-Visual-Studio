@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C04_108</title>
+</head>
+
+<body>
+    <script>
+        /* El concepto de spread operator (o spread syntax) en JavaScript es una forma muy útil y moderna de expandir elementos de un iterable (como un array o un objeto)
+           en lugares donde se esperan múltiples elementos (como en llamadas a funciones, arrays o incluso objetos).
+        */
+        // Ejemplo de spread en funciones
+        function sumar(a, b, c) {
+            return a + b + c;
+        }
+
+        const numeros = [1, 2, 3];
+        console.log(sumar(...numeros)); // 6
+
+
+    </script>
+</body>
+
+</html>
