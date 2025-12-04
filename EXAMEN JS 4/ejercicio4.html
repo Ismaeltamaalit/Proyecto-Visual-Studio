@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        class Estructura{
+            constructor( array){
+                 this.array=[array];
+            }
+
+            introducir(elemento){
+              return  this.array.push(elemento);
+            }
+
+            extraer(){
+             return   this.array.slice();
+            }
+
+            visualizarTope(){
+               return this.array.findLast();
+            }
+            
+        }
+
+        e= new Estructura();
+        e.introducir(1);
+        e.introducir(2);
+        e.introducir(3);
+        
+        console.log(e);
+        
+        console.log(e.extraer())
+        console.log(e.visualizarTope);
+        
+        /*
+        Se que hay cosas que tengo algo mal, pero he creado las clases y las funciones, 
+        para insertar elementos he usado una variable elemento y
+        push para meterlos en el array, funciona parcialmente
+        me sale undefined y no entiendo exactamente porque, pero bueno
+        */
+        
+    </script>
+</body>
+</html>
