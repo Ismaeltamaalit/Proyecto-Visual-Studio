@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Estudiante {
+    constructor(nombre) {
+        this.nombre = nombre;
+        this.notas = []; 
+    }
+    
+   
+    agregarNota(nuevaNota) {
+        this.notas.push(nuevaNota); 
+    }
+
+            calcularPromedio(){
+                const promedio=this.notas.reduce((acumulador, notaActual)=>{
+                        return acumulador + notaActual;
+                 });
+
+                 return promedio/this.notas.length;
+                    
+                }
+            }
+
+            const nuevoEstudiante= new Estudiante("Martin")
+
+            nuevoEstudiante.agregarNota(9.1)
+            nuevoEstudiante.agregarNota(5.3)
+            nuevoEstudiante.agregarNota(9.9)
+
+            console.log(nuevoEstudiante.notas)
+
+            console.log(nuevoEstudiante.calcularPromedio())
+
+        
+    </script>
+</body>
+</html>

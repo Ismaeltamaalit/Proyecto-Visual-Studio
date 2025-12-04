@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       class Empleado{
+            constructor(nombre, salario){
+                this.nombre=nombre;
+                this.salario=salario;
+            }
+            aumentarSalario(porcentaje){
+                return this.salario+(this.salario*porcentaje);
+            }
+        }
+
+        const sueldo= new Empleado("José", 1450);
+
+        document.write("El salario nuevo es de "+sueldo.aumentarSalario(0.20));
+    </script>
+</body>
+</html>
