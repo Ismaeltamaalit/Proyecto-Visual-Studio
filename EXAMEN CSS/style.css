@@ -45,19 +45,18 @@ body{
     padding: 10px;
 }
 
-/* Imágenes: tamaño grande, borde azul y fondo blanco; colocadas a los lados */
+
 #i1, #i2, #i3, #i4, #i5{
     max-width: 48%;
     width: 48%;
     height: auto;
     background: #fff;
     padding: 8px;
-    border: 6px solid #2f62d6; /* borde azul ancho */
-    box-sizing: border-box;
+    border: 6px solid #2f62d6; 
     margin: 0.8em 0;
 }
 
-/* Alternar imágenes a los lados */
+
 #i1, #i3, #i5{
     float: left;
     margin-right: 2%;
@@ -67,14 +66,12 @@ body{
     margin-left: 2%;
 }
 
-/* Clearfix para que los contenedores crezcan con los floats */
 .seccion-central::after{
     content: "";
     display: table;
     clear: both;
 }
 
-/* Móvil: quitar floats y hacer imágenes a ancho completo */
 @media (max-width: 800px){
     #i1, #i2, #i3, #i4, #i5{
         float: none;
@@ -144,14 +141,12 @@ color:white;
     display:block;
 }
 
-/* i3 previously had a huge left margin; center images instead */
 #i3{
     max-width: 100%;
     height: auto;
     margin: 0.8em auto;
 }
 
-/* i4 and i5 are handled by the grouped image rule above */
 
 .end{
     background-color: blue;
