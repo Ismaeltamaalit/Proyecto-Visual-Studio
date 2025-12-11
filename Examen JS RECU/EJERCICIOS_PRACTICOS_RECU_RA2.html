@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EJERCICIOS PRÁCTICOS - RECUPERACIÓN RA2</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Noto Sans', Arial, sans-serif; margin: 2rem; line-height: 1.45; }
+    h1, h2 { margin: 0.2rem 0 0.8rem; }
+    section { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+    .row { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+    input[type="number"], input[type="text"], select { padding: 0.4rem; }
+    button { padding: 0.5rem 0.8rem; cursor: pointer; }
+    code { background: #f7f7f7; padding: 2px 4px; border-radius: 4px; }
+    .out { margin-top: 0.5rem; padding: 0.5rem; background: #fafafa; border: 1px dashed #ccc; border-radius: 6px; white-space: pre-wrap; }
+    .hint { color: #555; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  
+  <section id="ej1">
+    <h2>1. Calculadora básica con validación de entrada (2 puntos)</h2>
+    <div class="row">
+      <input id="calcA" type="text" placeholder="a" />
+      <input id="calcB" type="text" placeholder="b" />
+      <select id="calcOp">
+        <option value="sumar">sumar</option>
+        <option value="restar">restar</option>
+        <option value="multiplicar">multiplicar</option>
+        <option value="dividir">dividir</option>
+      </select>
+      <button onclick="Calculadora()">Calcular</button>
+    </div>
+    <div id="calcOut" class="out"></div>
+  </section>
+
+  <section id="ej2">
+    <h2>2. Sumatorio con bucles y filtros básicos (2 puntos)</h2>
+    <div class="row">
+      <input id="sumN" type="number" placeholder="n" />
+      <select id="sumFiltro">
+        <option value="todos">todos</option>
+        <option value="pares">pares</option>
+        <option value="impares">impares</option>
+      </select>
+      <select id="sumModo">
+        <option value="for">for</option>
+        <option value="while">while</option>
+      </select>
+      <button onclick="SumaHastaN()">Sumar</button>
+    </div>
+    <div id="sumOut" class="out"></div>
+  </section>
+
+  
+
+  <script src="ejercicio1.js"></script>
+
+  <script src="ejercicio2.js"></script> 
+    
+
+    
+</body>
+</html>
