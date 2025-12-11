@@ -3,33 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio1</title>
+    <title>Ejercicio1 Suma con Bucle</title>
 </head>
 <body>
+    <h1>Suma de Tres Números (Usando Bucle For)</h1>
+    <p id="resultado"></p>
+    <script>
+        function solicitarYSumar() {
+            let numeros = [];
+            const CANTIDAD_NUMEROS = 3;
 
-    <script>    
+            // --- 1. SOLICITAR Y VALIDAR LA ENTRADA (Mismo código que antes) ---
+            for (let i = 1; i <= CANTIDAD_NUMEROS; i++) {
+                let entradaValida = false;
+                while (!entradaValida) {
+                    const entrada = prompt(`Introduce el número ${i} de ${CANTIDAD_NUMEROS}:`);
+                    const numero = Number(entrada);
 
-   /**
-    * como no recuerdo como dejarlo como archivo independiente, lo dejo así
-    * Este codigo lo que hace es pedir tres datos númericos, una validación
-    * y los une como cadena, para luego hacer el calculo
-    * Se que no es como se pedia, pero no me sale de otra forma
-    **/
-   let num1=Number(prompt("Introduce un numero"));
-        let num2=Number(prompt("Introduce un numero"));
-        let num3=Number(prompt("Introduce un numero"));
+                    if (!isNaN(numero) && entrada !== null && entrada.trim() !== "") {
+                        numeros.push(numero);
+                        entradaValida = true;
+                    } else {
+                        if (entrada === null) {
+                            document.getElementById("resultado").textContent = "Operación cancelada.";
+                            return; 
+                        }
+                        alert("Entrada no válida. Por favor, introduce un número.");
+                    }
+                }
+            }
 
-        let cadena=[num1, num2, num3];
-
-        if(isNaN(num1)||isNaN(num2)||isNaN(num3)){
-            document.write("Los numeros insertados no son validos")
-        }else{
-           document.write("la suma de la cadena de datos es: ");
-        document.write(cadena[0]+cadena[1]+cadena[2]) 
+            // --- 2. CÁLCULO DE LA SUMA USANDO UN BUCLE FOR (Nuevo método) ---
+            let suma = 0;
+            
+            // Recorre el array de números y suma cada elemento a la variable 'suma'
+            for (let i = 0; i < numeros.length; i++) {
+                suma = suma + numeros[i];
+                // Equivalente a: suma += numeros[i];
+            }
+            
+            // --- 3. MOSTRAR EL RESULTADO (Mismo código que antes) ---
+            document.getElementById("resultado").textContent = `La suma de los números (${numeros.join(", ")}) es: ${suma}`;
         }
-        
 
-        
+        solicitarYSumar();
     </script>
 </body>
 </html>
