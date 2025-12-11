@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 15 - Array de Nombres</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-gray-100 min-h-screen flex flex-col items-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-xl">
+        <h1 class="text-2xl font-bold mb-4 text-indigo-700">Actividad 15: Lista de Nombres</h1>
+        <p class="mb-4 text-gray-700">Introduce nombres en el cuadro de diálogo (prompt). Deja el campo vacío y pulsa Aceptar para terminar la entrada de datos.</p>
+        <button onclick="obtenerNombres()" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-200">
+            Comenzar Captura
+        </button>
+        
+        <div id="resultado" class="mt-6 p-4 border rounded-lg bg-indigo-50 space-y-3">
+            <p class="font-semibold text-indigo-800">Resultados:</p>
+            <!-- Aquí se insertarán los resultados -->
+        </div>
+    </div>
+
+    <script>
+        function obtenerNombres() {
+            // Inicialización del array para almacenar los nombres
+            const nombres = [];
+            let nombre;
+
+            // Bucle para solicitar nombres hasta que se ingrese una cadena vacía
+            do {
+                // Muestra un prompt al usuario
+                nombre = prompt("Introduce un nombre (o deja vacío y pulsa Aceptar para finalizar):");
+
+                // Comprueba si el nombre no está vacío y no es nulo (si el usuario pulsa Cancelar)
+                if (nombre !== "" && nombre !== null) {
+                    nombres.push(nombre.trim()); // Almacena el nombre, eliminando espacios al inicio/final
+                }
+            } while (nombre !== "" && nombre !== null);
+
+            // Selecciona el elemento HTML donde se mostrarán los resultados
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = '<p class="font-semibold text-indigo-800">Resultados:</p>';
+
+            // Comprueba si se introdujo algún nombre
+            if (nombres.length === 0) {
+                resultadoDiv.innerHTML += '<p class="text-gray-600">No se introdujo ningún nombre.</p>';
+                return; // Finaliza la función
+            }
+
+            // a. El primer nombre tecleado por el usuario
+            const primerNombre = nombres[0];
+            resultadoDiv.innerHTML += `<p class="text-gray-700"><span class="font-bold">Primer Nombre:</span> ${primerNombre}</p>`;
+
+            // b. El último nombre tecleado por el usuario
+            const ultimoNombre = nombres[nombres.length - 1];
+            resultadoDiv.innerHTML += `<p class="text-gray-700"><span class="font-bold">Último Nombre:</span> ${ultimoNombre}</p>`;
+
+            // c. La lista de nombres en orden ascendente
+            // 1. Crear una copia del array antes de ordenar para no modificar el original
+            const nombresOrdenados = [...nombres];
+            // 2. Ordenar el nuevo array alfabéticamente (orden ascendente por defecto)
+            nombresOrdenados.sort(); 
+
+            // Construir la lista para mostrar en el HTML
+            let listaHTML = '<p class="font-bold mt-3 text-indigo-800">Lista de Nombres (Orden Ascendente):</p>';
+            listaHTML += '<ul class="list-disc ml-6 text-gray-700">';
+            
+            // Iterar sobre el array ordenado e incluir cada nombre en una línea (elemento <li>)
+            nombresOrdenados.forEach(nombre => {
+                listaHTML += `<li>${nombre}</li>`;
+            });
+            
+            listaHTML += '</ul>';
+            resultadoDiv.innerHTML += listaHTML;
+        }
+    </script>
+</body>
+</html>
