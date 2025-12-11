@@ -1,0 +1,25 @@
+.menu ul {
+  list-style: none; 
+  padding: 0;       
+  margin: 0;        
+  display: flex;
+  
+  justify-content: center; 
+}
+
+
+
+.menu a {
+  display: block; 
+  padding: 10px 15px; 
+  text-decoration: none;
+  color: #333;
+}
+
+.menu{
+    background-color: orange;
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
