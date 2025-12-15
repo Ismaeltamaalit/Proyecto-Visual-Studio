@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Solo Letras en Campo de Texto</title>
+</head>
+<body>
+
+    <h2>Entrada de Texto - Solo Letras</h2>
+    <input type="text" id="campoSoloLetras" placeholder="Escribe aquí (solo letras)">
+
+    <p style="margin-top: 15px;">**Instrucción:** Intenta escribir un número en la caja de arriba.</p>
+
+    <script>
+        // Obtener la referencia al elemento de entrada
+        const campo = document.getElementById('campoSoloLetras');
+
+        // Agregar el "event listener" para el evento keydown
+        campo.addEventListener('keydown', function(event) {
+            // Obtener el valor de la tecla presionada
+            const teclaPresionada = event.key;
+            
+            // Expresión regular para verificar si la tecla es un dígito (del 0 al 9)
+            // La expresión /\d/ comprueba si el carácter es un dígito.
+            const esNumero = /\d/.test(teclaPresionada);
+
+            // Verificar si la tecla es un número y no es una tecla de control/edición
+            // (como Shift, Alt, Ctrl, Flechas, Tab, Enter, Backspace o Delete)
+            // La mayoría de las teclas de control tienen event.key con más de un carácter o nombres específicos.
+            if (esNumero) {
+                // Prevenir la acción por defecto (que es escribir el carácter en el campo)
+                event.preventDefault();
+                
+                // Mostrar el mensaje de alerta
+                alert('🚫 ¡Solo se permiten letras en este campo!');
+            }
+        });
+    </script>
+
+</body>
+</html>
