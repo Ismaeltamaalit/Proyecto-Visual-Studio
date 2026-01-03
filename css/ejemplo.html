@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seis Cajas con Formas Distintas (Tailwind Grid)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Aseguramos que la altura total de la vista sea usada */
+        html, body { height: 100%; margin: 0; }
+        /* Definimos una altura mínima para las filas, importante para el diseño */
+        .grid-container {
+            /* Definimos el grid de 3 columnas (grid-cols-3) y 2 filas (grid-rows-2) */
+            grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); 
+        }
+    </style>
+</head>
+<body class="h-screen">
+
+    <div class="grid grid-cols-3 grid-rows-2 h-full gap-4 p-4 grid-container">
+        
+        <div class="bg-indigo-600 col-span-2 rounded-lg shadow-xl flex items-center justify-center text-white font-black text-2xl">
+            Caja 1 (2 Cols)
+        </div>
+
+        <div class="bg-pink-500 rounded-lg shadow-xl flex items-center justify-center text-white font-black text-2xl">
+            Caja 2 (1 Col)
+        </div>
+
+        <div class="bg-teal-500 rounded-lg shadow-xl flex items-center justify-center text-white font-black text-2xl">
+            Caja 3 (1 Col)
+        </div>
+
+        <div class="bg-orange-500 rounded-lg shadow-xl flex items-center justify-center text-white font-black text-2xl">
+            Caja 4 (1 Col)
+        </div>
+        
+        <div class="bg-gray-700 rounded-lg shadow-xl flex items-center justify-center text-white font-black text-2xl">
+            Caja 5 (1 Col)
+        </div>
+
+        <div class="bg-red-700 rounded-lg shadow-xl flex items-center justify-center text-white font-black text-2xl">
+            Caja 6 (1 Col)
+        </div>
+        
+    </div>
+
+</body>
+</html>
