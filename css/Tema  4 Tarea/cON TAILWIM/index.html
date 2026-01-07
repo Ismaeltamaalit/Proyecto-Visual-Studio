@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de 9 Celdas - Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#333]">
+
+  <nav class="bg-[#e2c692] w-[400px] mx-auto text-center">
+    <ul class="flex justify-center list-none p-0 m-0">
+      <li><a href="#home" class="block py-[10px] px-[15px] no-underline text-[#333]">Home</a></li>
+      <li><a href="#news" class="block py-[10px] px-[15px] no-underline text-[#333]">News</a></li>
+      <li><a href="#contact" class="block py-[10px] px-[15px] no-underline text-[#333]">Contact</a></li>
+      <li><a href="#about" class="block py-[10px] px-[15px] no-underline text-[#333]">About</a></li>
+    </ul>
+  </nav>
+    
+  <div class="grid grid-cols-5 grid-rows-5 gap-2">
+    
+    <div class="col-span-4 bg-orange-500">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure quia inventore rerum...
+    </div>
+
+    <div class="row-span-3 row-start-2 bg-red-600">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto autem...
+    </div>
+    
+    <div class="row-span-3 row-start-2 bg-blue-600">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fugiat...
+    </div>
+    
+    <div class="row-span-3 row-start-2 bg-green-600">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ipsum...
+    </div>
+
+    <div class="col-span-4 row-start-5 bg-yellow-400">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur odio...
+    </div>
+  </div>
+
+  <footer class="text-center bg-orange-500">
+      <p>DIW 2019</p>
+  </footer>
+
+</body>
+</html>
