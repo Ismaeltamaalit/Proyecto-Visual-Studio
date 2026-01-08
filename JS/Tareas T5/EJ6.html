@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="opciones">¿Aceptas las condiciones?</label>
+<select id="miSelector">
+    <option value="no">No, deshabilitar botón</option>
+    <option value="si">Sí, habilitar botón</option>
+</select>
+
+<br><br>
+
+<button id="miBoton" disabled>Enviar formulario</button>
+
+<script>
+
+const selector = document.getElementById('miSelector');
+const boton = document.getElementById('miBoton');
+
+selector.addEventListener('change', () => {
+    
+    if (selector.value === "si") {
+        
+        boton.disabled = false;
+    } else {
+        
+        boton.disabled = true;
+    }
+});
+</script>
+</body>
+</html>

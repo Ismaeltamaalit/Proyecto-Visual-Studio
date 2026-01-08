@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="campoTexto">Escribe tu mensaje:</label><br>
+<textarea id="campoTexto" maxlength="150" placeholder="Máximo 150 caracteres"></textarea>
+
+<p>Caracteres restantes: <span id="contador">150</span></p>
+    <script>
+const campoTexto = document.getElementById('campoTexto');
+const contador = document.getElementById('contador');
+const LIMITE = 150;
+
+
+campoTexto.addEventListener('input', () => {
+    
+    const restantes = LIMITE - campoTexto.value.length;
+    
+    contador.textContent = restantes;
+    
+    
+    if (restantes <= 10) {
+        contador.style.color = 'red';
+    } else {
+        contador.style.color = 'black';
+    }
+});    </script>
+</body>
+</html>
