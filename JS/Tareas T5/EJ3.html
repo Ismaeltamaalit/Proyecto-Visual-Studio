@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloqueo de Teclas F</title>
+    <style>
+        .error { color: red; display: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <label for="nombreUsuario">Escribe algo:</label><br>
+    <input type="text" id="nombreUsuario" placeholder="Prueba las teclas F1 a F12">
+    
+    <p id="aviso" class="error">¡Las teclas de función (F1-F12) están bloqueadas!</p>
+
+    <script>
+
+        const input = document.getElementById('nombreUsuario');
+        const aviso = document.getElementById('aviso');
+
+        input.addEventListener('keydown', (event) => {
+            
+
+            if (event.key.startsWith('F') && event.key.length <= 3) {
+                
+                event.preventDefault(); 
+                
+                aviso.style.display = 'block';
+                alert("Has intentado pulsar: " + event.key + ". Esta tecla está bloqueada.");
+                
+                console.log("Acceso denegado a: " + event.key);
+            } else {
+                aviso.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
