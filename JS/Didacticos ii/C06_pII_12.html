@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C06_pII_12</title>
+  </head>
+
+  <body>
+    <div id="datos"></div>
+    <script>
+      const lat = 40.443798801106034; // latitud
+      const lng = -3.808893665676562; // longitud
+
+      const apiKey = "TU_CLAVE_DE_API"; // reemplazar con tu clave de API
+
+      const url =
+        "https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apikey}";
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === "OK") {
+            const results = data.results;
+            if (results.length > 0) {
+              // Obtener componentes de la dirección
+              const addressComponents = results[0].addressComponents;
+              const formattedAddress = results[0].formattedAddress;
+              document.querySelector("#datos").innerHTML = formattedAddress;
+              console.log(addressComponents);
+            } else {
+              console.log("Error en la geocodificación inversa");
+            }
+          }
+        })
+        .catch((error) => {
+          console.log("Error en la solicitud");
+        });
+    </script>
+  </body>
+</html>

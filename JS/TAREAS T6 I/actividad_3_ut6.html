@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIDAD 6 - ACTIVIDAD 3</title>
+    <style>
+        .resaltado {
+            background-color: lightgray;
+        }
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de elementos</h1>
+    <ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+    <script>
+const lista = document.getElementById('lista');
+
+lista.addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI') {
+        e.target.classList.toggle('resaltado');
+    }
+});
+
+lista.addEventListener('dblclick', (e) => {
+    if (e.target.tagName === 'LI') {
+        e.target.remove();
+    }
+});
+    </script>
+</body>
+
+</html>
