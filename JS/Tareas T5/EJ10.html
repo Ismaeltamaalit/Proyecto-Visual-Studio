@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación de Formulario</title>
+    
+</head>
+<body>
+
+    <h2>Registro de Usuario</h2>
+    
+    <form id="miFormulario">
+        <div class="campo">
+            <label>Nombre:</label>
+            <input type="text" id="nombre">
+        </div>
+        <div class="campo">
+            <label>Apellidos:</label>
+            <input type="text" id="apellidos">
+        </div>
+        <div class="campo">
+            <label>Correo electrónico:</label>
+            <input type="email" id="correo">
+        </div>
+        <div class="campo">
+            <label>Contraseña:</label>
+            <input type="password" id="password">
+        </div>
+        
+        <button type="submit">Enviar formulario</button>
+    </form>
+
+    <div id="mensajeError"></div>
+    <div id="mensajeExito"></div>
+
+    <script>
+        const formulario = document.getElementById('miFormulario');
+        const errorDiv = document.getElementById('mensajeError');
+        const exitoDiv = document.getElementById('mensajeExito');
+
+        formulario.addEventListener('submit', function(evento) {
+            evento.preventDefault();
+
+            errorDiv.textContent = "";
+            exitoDiv.textContent = "";
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const apellidos = document.getElementById('apellidos').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (nombre === "" || apellidos === "" || correo === "" || password === "") {
+                errorDiv.textContent = "Error: Todos los campos deben estar completos.";
+            } else {
+                exitoDiv.textContent = "¡Formulario enviado correctamente!";
+            }
+        });
+    </script>
+
+</body>
+</html>

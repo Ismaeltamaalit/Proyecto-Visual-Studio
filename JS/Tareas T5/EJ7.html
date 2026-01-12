@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Cookies</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .campo { margin-bottom: 15px; }
+        label { display: inline-block; width: 80px; }
+        button { cursor: pointer; padding: 5px 10px; margin-right: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>Gestión de Datos (Cookies)</h2>
+    
+    <form id="formulario">
+        <div class="campo">
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" placeholder="Escribe el código">
+        </div>
+        <div class="campo">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Escribe el nombre">
+        </div>
+        
+        <button type="button" id="btnGuardar">Añadir cookies</button>
+        <button type="button" id="btnBorrar">Borrar cookies</button>
+    </form>
+
+    <script>
+        const inputCodigo = document.getElementById('codigo');
+        const inputNombre = document.getElementById('nombre');
+        const btnGuardar = document.getElementById('btnGuardar');
+        const btnBorrar = document.getElementById('btnBorrar');
+
+        
+        function setCookie(nombre, valor) {
+            
+            document.cookie = `${nombre}=${valor}; max-age=86400; path=/; SameSite=Lax`;
+        }
+
+        
+        function getCookie(nombre) {
+            let nombreEQ = nombre + "=";
+            let cookies = document.cookie.split(';');
+            
+            for(let i = 0; i < cookies.length; i++) {
+                let c = cookies[i].trim();
+                
+                if (c.indexOf(nombreEQ) === 0) {
+                    return c.substring(nombreEQ.length, c.length);
+                }
+            }
+            return ""; 
+        }
+
+       
+        function delCookie(nombre) {
+            
+            document.cookie = `${nombre}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        }
+
+
+        window.onload = () => {
+            const valorCodigo = getCookie("codigo");
+            const valorNombre = getCookie("nombre");
+
+            if (valorCodigo) inputCodigo.value = valorCodigo;
+            if (valorNombre) inputNombre.value = valorNombre;
+        };
+
+        btnGuardar.addEventListener('click', () => {
+            const cod = inputCodigo.value;
+            const nom = inputNombre.value;
+
+            setCookie("codigo", cod);
+            setCookie("nombre", nom);
+            
+            alert("Cookies guardadas correctamente.");
+        });
+
+       
+        btnBorrar.addEventListener('click', () => {
+            delCookie("codigo");
+            delCookie("nombre");
+
+            
+            inputCodigo.value = "";
+            inputNombre.value = "";
+
+            alert("Cookies eliminadas.");
+        });
+
+    </script>
+</body>
+</html>

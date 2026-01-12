@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+const palabras = ["auto", "árbol", "aire", "ala", "aspa", "abuelo", "ante", "amar"];
+
+const regex = /^a.{3}$/i;
+
+const resultado = palabras.filter(palabra => regex.test(palabra));
+
+
+console.log("Palabras encontradas:", resultado); 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registro</h2>
+    <form id="formRegistro">
+        <div class="campo">
+            <label for="pass">Introduce tu contraseña</label>
+            <input type="password" id="pass" placeholder="Mín. 8 caracteres, Mayús, Min y Núm">
+            <p id="mensajeError" class="error">La contraseña no cumple los requisitos de seguridad.</p>
+            <p id="mensajeExito" class="exito">¡Contraseña válida!</p>
+        </div>
+        <button type="submit">Validar Contraseña</button>
+    </form>
+
+    <script>
+        const formulario = document.getElementById('formRegistro');
+        const inputPass = document.getElementById('pass');
+        const errorMsg = document.getElementById('mensajeError');
+        const exitoMsg = document.getElementById('mensajeExito');
+
+        const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+        formulario.addEventListener('submit', function(e){
+            e.oreventDefauly();
+
+            errorMsg.style.display = 'none';
+            exitoMsg.style.display = 'none';
+
+            const password=inputPass.value;
+
+            if (regexPassword.test(password)) {
+                exitoMsg.style.display = 'block';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+
+        })
+    </script>
+</body>
+</html>

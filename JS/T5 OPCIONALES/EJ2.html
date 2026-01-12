@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Configuración de Seguridad</h3>
+    
+    <div class="password-container">
+        <input type="password" id="passwordField" placeholder="Introduce tu contraseña">
+        <button type="button" id="btnToggle">Mostrar</button>
+    </div>
+    <script>
+        const passInput = document.getElementById('passwordField');
+        const toggleBtn = document.getElementById('btnToggle');
+
+        toggleBtn.addEventListener('click', function(){
+            if(passInput.type==="password"){
+                passInput.type="text";
+                toggleBtn.textContent="Ocultar";
+            }else{
+                passInput.type="password";
+                toggleBtn.textContent="Mostrar";
+            }
+        })
+    </script>
+</body>
+</html>
