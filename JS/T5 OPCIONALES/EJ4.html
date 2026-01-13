@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Validación de Fecha</title>
+    <style>
+        .error {
+            color: #d93025;
+            font-size: 14px;
+            display: none;
+            margin-top: 4px;
+        }
+        input.invalid {
+            border: 2px solid #d93025;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <form id="dateForm">
+        <label for="userDate">Selecciona una fecha:</label><br>
+        <input type="date" id="userDate" name="userDate">
+        <div id="dateError" class="error">La fecha no puede ser futura ni estar vacía.</div>
+        <br><br>
+        <button type="submit">Validar Fecha</button>
+    </form>
+
+    <script>
+        const dateForm = document.getElementById('dateForm');
+        const dateInput = document.getElementById('userDate');
+        const dateError = document.getElementById('dateError');
+
+        dateForm.addEventListener('submit', function(event) {
+            const selectedDate = new Date(dateInput.value);
+            const today = new Date();
+            
+            today.setHours(0, 0, 0, 0);
+
+            if (!dateInput.value || selectedDate > today) {
+                event.preventDefault();
+                dateError.style.display = 'block';
+                dateInput.classList.add('invalid');
+            } else {
+                dateError.style.display = 'none';
+                dateInput.classList.remove('invalid');
+                alert('Fecha válida aceptada');
+            }
+        });
+
+        dateInput.addEventListener('input', function() {
+            dateError.style.display = 'none';
+            dateInput.classList.remove('invalid');
+        });
+    </script>
+
 </body>
 </html>

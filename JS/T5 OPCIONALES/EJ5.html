@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validador de URL</title>
+    <style>
+        .error-msg {
+            color: #b00020;
+            font-size: 13px;
+            display: none;
+            margin-top: 5px;
+        }
+        input {
+            padding: 8px;
+            width: 300px;
+        }
+        input.input-error {
+            border: 1px solid #b00020;
+            outline-color: #b00020;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="urlForm">
+        <label for="urlInput">Introduce una URL (incluyendo http/https):</label><br>
+        <input type="text" id="urlInput" placeholder="https://www.ejemplo.com">
+        <div id="urlError" class="error-msg">Por favor, ingresa una URL válida (ej. https://google.com).</div>
+        <br><br>
+        <button type="submit">Validar</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('urlForm');
+        const input = document.getElementById('urlInput');
+        const error = document.getElementById('urlError');
+
+        function isValidURL(string) {
+            try {
+                new URL(string);
+                return true;
+            } catch (_) {
+                return false;
+            }
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const value = input.value;
+
+            if (isValidURL(value)) {
+                error.style.display = 'none';
+                input.classList.remove('input-error');
+                alert('URL válida: ' + value);
+            } else {
+                error.style.display = 'block';
+                input.classList.add('input-error');
+            }
+        });
+
+        input.addEventListener('input', function() {
+            error.style.display = 'none';
+            input.classList.remove('input-error');
+        });
+    </script>
+
+</body>
+</html>
