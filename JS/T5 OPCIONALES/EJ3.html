@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="phoneForm">
+        <label for="phone">Número de teléfono:</label><br>
+        <input type="text" id="phone" name="phone" placeholder="Ej: 1234567890">
+        <div id="errorMessage" class="error-message">El número debe tener exactamente 10 dígitos.</div>
+        <br><br>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        const form = document.getElementById('phoneForm');
+        const phoneInput = document.getElementById('phone');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function(event) {
+            const phoneValue = phoneInput.value;
+            const phoneRegex = /^\d{10}$/;
+
+            if (!phoneRegex.test(phoneValue)) {
+                event.preventDefault();
+                errorMessage.style.display = 'block';
+                phoneInput.style.borderColor = 'red';
+            } else {
+                errorMessage.style.display = 'none';
+                phoneInput.style.borderColor = 'green';
+                alert('Formulario enviado con éxito');
+            }
+        });
+
+        phoneInput.addEventListener('input', function() {
+            if (errorMessage.style.display === 'block') {
+                errorMessage.style.display = 'none';
+                phoneInput.style.borderColor = '';
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>
