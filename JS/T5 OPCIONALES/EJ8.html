@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación de Nombre</title>
+</head>
+<body>
+
+    <form id="nameForm">
+        <label for="fullName">Nombre completo:</label>
+        <input 
+            type="text" 
+            id="fullName" 
+            required 
+            pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$"
+            title="Solo se permiten letras y espacios"
+        >
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="status"></p>
+
+    <script>
+        const nameForm = document.getElementById('nameForm');
+        const status = document.getElementById('status');
+        const nameInput = document.getElementById('fullName');
+
+        nameForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+
+            if (regex.test(nameInput.value)) {
+                status.textContent = "Nombre válido.";
+                status.style.color = "green";
+            } else {
+                status.textContent = "El nombre no puede contener números ni caracteres especiales.";
+                status.style.color = "red";
+            }
+        });
+    </script>
+
+</body>
+</html>

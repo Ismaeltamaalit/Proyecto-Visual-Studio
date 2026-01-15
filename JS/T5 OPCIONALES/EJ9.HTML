@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detector de Teclas</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .key-display { font-size: 2em; color: #007BFF; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Presiona las flechas del teclado</h1>
+    <p>O cualquier otra tecla para ver su nombre.</p>
+    <div id="keyDisplay" class="key-display">-</div>
+
+    <script>
+        const display = document.getElementById('keyDisplay');
+
+        window.addEventListener('keydown', (e) => {
+            const keyName = e.key;
+            display.textContent = keyName;
+
+            if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(keyName)) {
+                alert(`Has presionado la tecla: ${keyName}`);
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validar Código Postal</title>
+</head>
+<body>
+
+    <form id="zipForm">
+        <label for="zipcode">Código Postal (5 dígitos):</label>
+        <input 
+            type="text" 
+            id="zipcode" 
+            pattern="\d{5}" 
+            title="Debe contener exactamente 5 números" 
+            required
+        >
+        <button type="submit">Validar</button>
+    </form>
+
+    <p id="feedback"></p>
+
+    <script>
+        const zipForm = document.getElementById('zipForm');
+        const feedback = document.getElementById('feedback');
+        const zipInput = document.getElementById('zipcode');
+
+        zipForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const zipValue = zipInput.value;
+            const isValid = /^\d{5}$/.test(zipValue);
+
+            if (isValid) {
+                feedback.textContent = "Código postal válido.";
+                feedback.style.color = "green";
+            } else {
+                feedback.textContent = "Error: El código debe tener 5 dígitos numéricos.";
+                feedback.style.color = "red";
+            }
+        });
+    </script>
+
+</body>
+</html>

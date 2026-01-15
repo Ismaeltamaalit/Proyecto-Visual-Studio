@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detección de Cambios en Select</title>
+</head>
+<body>
+
+    <label for="selectCategorias">Categoría:</label>
+    <select id="selectCategorias">
+        <option value="Electronica">Electrónica</option>
+        <option value="Ropa">Ropa</option>
+        <option value="Hogar">Hogar</option>
+    </select>
+
+    <br><br>
+
+    <label for="selectPrioridad">Prioridad:</label>
+    <select id="selectPrioridad">
+        <option value="Alta">Alta</option>
+        <option value="Media">Media</option>
+        <option value="Baja">Baja</option>
+    </select>
+
+    <script>
+        const select1 = document.getElementById('selectCategorias');
+        const select2 = document.getElementById('selectPrioridad');
+
+        function mostrarValores() {
+            const valor1 = select1.value;
+            const valor2 = select2.value;
+            alert(`Selección actualizada:\nCategoría: ${valor1}\nPrioridad: ${valor2}`);
+        }
+
+        select1.addEventListener('change', mostrarValores);
+        select2.addEventListener('change', mostrarValores);
+    </script>
+
+</body>
+</html>
