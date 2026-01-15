@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Burbujeo de Eventos</title>
+    <style>
+        div {
+            padding: 30px;
+            border: 2px solid black;
+            margin: 10px;
+        }
+        #externo { background-color: lightblue; }
+        #interno { background-color: lightcoral; }
+    </style>
+</head>
+<body>
+
+    <div id="externo">
+        Div Externo
+        <div id="interno">
+            Div Interno
+            <br><br>
+            <button id="btnClick">Haz clic aquí</button>
+        </div>
+    </div>
+
+    <script>
+        let divExterno = document.querySelector("#externo");
+        let divInterno = document.querySelector("#interno");
+        let boton = document.querySelector("#btnClick");
+
+        divExterno.addEventListener("click", function() {
+            console.log("Clic en: DIV EXTERNO");
+        });
+
+        divInterno.addEventListener("click", function() {
+            console.log("Clic en: DIV INTERNO");
+        });
+
+        boton.addEventListener("click", function() {
+            console.log("Clic en: BOTÓN");
+        });
+    </script>
+
+</body>
+</html>

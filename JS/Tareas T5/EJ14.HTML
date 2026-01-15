@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencia de Color con Cookies</title>
+</head>
+<body>
+
+    <h1>Selecciona tu color de fondo</h1>
+    
+    <select id="selectorColor">
+        <option value="white">Blanco</option>
+        <option value="lightblue">Azul claro</option>
+        <option value="lightgreen">Verde claro</option>
+        <option value="lightyellow">Amarillo claro</option>
+        <option value="lavender">Lavanda</option>
+    </select>
+
+    <script>
+        const selector = document.querySelector("#selectorColor");
+
+        window.onload = () => {
+            const colorGuardado = leerCookie("colorPreferido");
+            if (colorGuardado) {
+                document.body.style.backgroundColor = colorGuardado;
+                selector.value = colorGuardado;
+            }
+        };
+
+        selector.addEventListener("change", (e) => {
+            const colorSeleccionado = e.target.value;
+            document.body.style.backgroundColor = colorSeleccionado;
+            
+            guardarCookie("colorPreferido", colorSeleccionado, 30);
+        });
+
+        function guardarCookie(nombre, valor, dias) {
+            const fecha = new Date();
+            fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
+            const expiracion = "expires=" + fecha.toUTCString();
+            document.cookie = `${nombre}=${valor};${expiracion};path=/;SameSite=Lax`;
+        }
+
+        function leerCookie(nombre) {
+            const nombreEQ = nombre + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(nombreEQ) == 0) return c.substring(nombreEQ.length, c.length);
+            }
+            return null;
+        }
+    </script>
+</body>
+</html>
