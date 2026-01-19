@@ -25,7 +25,7 @@ class Guerrero(Heroe):
         otro_heroe.recibir_daño(daño_total)
         print(f"{self.nombre} ataca a {otro_heroe.nombre} causando {daño_total} de daño.")
 
-class Mago(Heroe): # Añadido (Heroe)
+class Mago(Heroe): 
     def __init__(self, nombre:str, salud:int, inteligencia:int):
         super().__init__(nombre, salud)
         self.inteligencia = inteligencia
@@ -45,7 +45,7 @@ class Picaro(Heroe):
         dado1 = random.randint(1, 10)
         dado2 = random.randint(1, 10)
         daño_total = dado1 + dado2 + self.destreza
-        otro_heroe.recibir_daño(daño_total) # Faltaba aplicar el daño
+        otro_heroe.recibir_daño(daño_total) 
         print(f"{self.nombre} apuñala a {otro_heroe.nombre} causando {daño_total} de daño.")
 
 class Paladin(Heroe):
@@ -54,13 +54,13 @@ class Paladin(Heroe):
         self.fuerza = fuerza
         self.fe = fe
             
-    def atacar(self, otro_heroe): # Corregida identación
+    def atacar(self, otro_heroe): 
         dado = random.randint(1, 10)
-        daño_total = dado + self.fuerza # Cambiado inteligencia por fuerza
+        daño_total = dado + self.fuerza 
         otro_heroe.recibir_daño(daño_total)
         print(f"{self.nombre} golpea a {otro_heroe.nombre} causando {daño_total} de daño.")    
 
-    def curar(self, otro_heroe): # Corregida identación
+    def curar(self, otro_heroe): 
         dado = random.randint(1, 5)
         curacion_total = dado + self.fe
         otro_heroe.ser_curado(curacion_total)
