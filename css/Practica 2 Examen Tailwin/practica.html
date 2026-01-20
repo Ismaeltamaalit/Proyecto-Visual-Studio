@@ -10,12 +10,12 @@
 
     <header class="bg-gray-500 text-white">
         <div class="container  px-6 py-4 flex flex-col md:flex-row justify-between ">
-            <img src="imagen.jpeg" alt="Logo" class="h-8">
+            <img src="imagen.jpeg" alt="Logo" class="h-9 mb-4 md:mb-0">
             <nav class="flex flex-col md:flex-row space-y-4 items center md:space-y-0 md:space-x-6">
-                <a href="#hero" class="hover:text-blue-300 font-medium focus:ring-2 focus:ring-blue-300 outline-none rounded">Inicio</a>
-                <a href="#products" class="hover:text-blue-300 font-medium focus:ring-2 focus:ring-blue-300 outline-none rounded">Productos</a>
-                <a href="#gallery" class="hover:text-blue-300 font-medium focus:ring-2 focus:ring-blue-300 outline-none rounded">Galeria</a>
-                <a href="#contact" class="hover:text-blue-300 font-medium focus:ring-2 focus:ring-blue-300 outline-none rounded">Contactos</a>
+                <a href="#hero" class="hover:text-blue-300 font-medium">Inicio</a>
+                <a href="#products" class="hover:text-blue-300 font-medium">Productos</a>
+                <a href="#gallery" class="hover:text-blue-300 font-medium">Galeria</a>
+                <a href="#contact" class="hover:text-blue-300 font-medium">Contactos</a>
             </nav>
         </div>
     </header>
@@ -28,52 +28,50 @@
         </div>
     </section>
 
-<section id="products" class="py-16 container mx-auto px-6">
-    <h2 class="text-3xl font-extrabold mb-8 text-center md:text-left">Productos</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section id="products" class="py-16 container mx-auto px-6 flex flex-col">
+            <h1 class="text-3xl font-extrabold mb-3">Productos</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3  gap-8">
 
-        <div class="md:col-span-2 p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group">
-            <div class="mb-4 overflow-hidden rounded-lg">
-                <img src="https://picsum.photos/300/200?random=1" alt="Producto Aleatorio" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center transition-all hover:shadow-md hover:-translate-y-1">
+                <div class="mb-3 overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/300/200?random=1" alt="Producto Aleatorio" class="w-full h-40 object-cover">
+                </div>
+                <h3 class="text-xl font-bold mb-2">Producto </h3>
+                <p class="text-gray-500">Descripción detallada del producto.</p>
             </div>
-            <h3 class="text-2xl font-bold mb-2">Producto Premium</h3>
-            <p class="text-gray-500 max-w-md mx-auto">Esta tarjeta ahora ocupa más espacio en desktop para destacar nuestro producto principal.</p>
+
+            <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center transition-all hover:shadow-md hover:-translate-y-1">
+                <div class="text-blue-500 text-3xl mb-3 flex justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="TagIcon" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Nombre</h3>
+                <p class="text-gray-500">Descripción del producto.</p>
+            </div>
+
+            <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center transition-all hover:shadow-md hover:-translate-y-1">
+                <div class="text-blue-600 text-4xl font-bold mb-3">
+                </div>
+                <h3 class="text-xl font-bold mb-2">Precio Oferta</h3>
+                <span id="random-price">0</span>€
+
+                <p class="text-gray-500">Precio generado aleatoriamente.</p>
+            </div>
+
+            <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center flex flex-col justify-between transition-all hover:shadow-md hover:-translate-y-1">
+                <div>
+                    <h3 class="text-xl font-bold mb-2 ">Finalizar Compra</h3>
+                    <p class="text-gray-500 mb-4">Añade este artículo a tu carrito.</p>
+                </div>
+                <button class="w-full bg-green-500 text-white py-2 rounded-lg font-semibold hover:bg-green-600  transition-all duration-300 ease-in-out 
+               hover:bg-blue-700 hover:shadow-lg hover:scale-105">
+                    Comprar ahora
+                </button>
+            </div> 
+
         </div>
-
-        <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <div class="text-blue-500 text-3xl mb-3 flex justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                </svg>
-            </div>
-            <h3 class="text-xl font-bold mb-2">Categorías</h3>
-            <span class="text-3xl font-black text-blue-600">+50</span>
-            <p class="text-gray-500 mt-2">Dato numérico añadido para cumplir el requisito.</p>
-        </div>
-
-        <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <h3 class="text-xl font-bold mb-4">Precio Oferta</h3>
-            <div class="text-blue-600 mb-2">
-                <span id="random-price" class="text-5xl font-black">0</span><span class="text-3xl font-bold">€</span>
-            </div>
-            <p class="text-gray-500">Precio generado aleatoriamente con énfasis visual.</p>
-        </div>
-
-        <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-            <div>
-                <h3 class="text-xl font-bold mb-2">Finalizar Compra</h3>
-                <p class="text-gray-500 mb-4">Añade este artículo a tu carrito de forma segura.</p>
-            </div>
-            <button class="w-full bg-green-500 text-white py-3 rounded-lg font-bold shadow-md
-                hover:bg-blue-700 hover:shadow-lg focus:ring-4 focus:ring-green-300 focus:outline-none
-                transition-all duration-300 hover:scale-105 active:scale-95">
-                Comprar ahora
-            </button>
-        </div> 
-
-    </div>
-</section>
+    </section>
 
     <section id="gallery" class="py-10 bg-white">
                     <h1 class="text-3xl font-extrabold mb-3 text-center">Galeria de Imagenes</h1>
@@ -93,41 +91,32 @@
 
 <section id="contact" class="py-16 bg-gray-50">
     <div class="container mx-auto px-6 flex justify-center">
-        <div class="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+        <div class="w-full  bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
             <div class="text-center mb-8">
                 <h2 class="text-3xl font-bold text-gray-800">Contáctanos</h2>
-                <p class="text-gray-500 mt-2">Te responderemos en menos de 24 horas.</p>
             </div>
             
-            <form id="contactForm" class="space-y-6">
+            <form id="contactForm" class="space-y-4">
                 <div>
-                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Nombre completo</label>
-                    <input type="text" id="name"
-                        class="w-full p-3 rounded-lg border border-gray-300 transition-all duration-200
-                        focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none focus:shadow-md"
-                        placeholder="Tu nombre...">
+                    <label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+                    <input type="text" 
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none focus:ring-offset-2">
                 </div>
 
                 <div>
-                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">Correo electrónico</label>
-                    <input type="email" id="email"
-                        class="w-full p-3 rounded-lg border border-gray-300 transition-all duration-200
-                        focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none focus:shadow-md"
-                        placeholder="ejemplo@correo.com">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+                    <input type="email"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none focus:ring-offset-2">
                 </div>
 
                 <div>
-                    <label for="message" class="block text-sm font-semibold text-gray-700 mb-1">Mensaje</label>
-                    <textarea id="message" rows="4" 
-                        class="w-full p-3 rounded-lg border border-gray-300 transition-all duration-200
-                        focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none focus:shadow-md"
-                        placeholder="¿En qué podemos ayudarte?"></textarea>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                    <textarea id="message"  rows="4" 
+                        class="w-full p-3 rounded-lg border border-gray-300  outline-none focus:ring-offset-2 focus:ring-2 focus:ring-blue-500"></textarea>
                 </div>
 
                 <button type="submit" 
-                    class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg shadow-md
-                    hover:bg-blue-700 hover:shadow-lg focus:ring-4 focus:ring-blue-300 focus:outline-none
-                    transition-all duration-300 active:scale-[0.98]">
+                    class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors hover:shadow-lg">
                     Enviar Mensaje
                 </button>
             </form>
