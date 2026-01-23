@@ -1,0 +1,83 @@
+:root {
+  --bg-main: #121212;
+  --bg-secondary: #1e1e1e;
+
+  --text-main: #ffffff;
+  --text-secondary: #b3b3b3;
+
+  --accent: #3b82f6;
+
+  --max-width: 1200px;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Header */
+.header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.nav a {
+  color: var(--text-secondary);
+}
+
+.nav a:hover {
+  color: var(--text-main);
+}
+
+/* Main */
+main h2 {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--bg-secondary);
+  margin-top: 3rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links a {
+  margin-left: 1rem;
+  color: var(--text-secondary);
+}
