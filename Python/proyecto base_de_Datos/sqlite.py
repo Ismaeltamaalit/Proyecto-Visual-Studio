@@ -1,155 +1,86 @@
 import sqlite3
 
-DB_NAME = "gestion_notas.db"
+DB = "gestion_notas.db"
 
 def obtener_conexion():
-    conn = sqlite3.connect(DB_NAME)
-    conn.execute("PRAGMA foreign_keys = ON;")
+    conn = sqlite3.connect(DB)
+    conn.execute("PRAGMA foreign_keys = ON")
     return conn
 
-def crear_tablas():
+def inicializar_db():
     conn = obtener_conexion()
     cursor = conn.cursor()
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS alumnos (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nombre TEXT NOT NULL UNIQUE
-        )
-    """)
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS asignaturas (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nombre TEXT NOT NULL UNIQUE
-        )
-    """)
+    cursor.execute("CREATE TABLE IF NOT EXISTS alumnos (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT UNIQUE NOT NULL)")
+    cursor.execute("CREATE TABLE IF NOT EXISTS asignaturas (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT UNIQUE NOT NULL)")
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS notas (
-            alumno_id INTEGER,
-            asignatura_id INTEGER,
-            nota REAL CHECK (nota >= 0 AND nota <= 10),
-            PRIMARY KEY (alumno_id, asignatura_id),
-            FOREIGN KEY (alumno_id) REFERENCES alumnos(id),
-            FOREIGN KEY (asignatura_id) REFERENCES asignaturas(id)
+            alumno_id INTEGER, 
+            asignatura_id INTEGER, 
+            nota REAL CHECK(nota >= 0 AND nota <= 10),
+            PRIMARY KEY(alumno_id, asignatura_id),
+            FOREIGN KEY(alumno_id) REFERENCES alumnos(id),
+            FOREIGN KEY(asignatura_id) REFERENCES asignaturas(id)
         )
     """)
     conn.commit()
     conn.close()
 
-def pedir_texto(mensaje):
+def pedir_texto(msg):
     while True:
-        valor = input(mensaje).strip()
-        if valor:
-            return valor
-        print("El texto no puede estar vacío.")
+        txt = input(msg).strip()
+        if txt: return txt
+        print("Error: El texto no puede estar vacío.")
 
-def pedir_nota(mensaje):
+def pedir_nota(msg):
     while True:
         try:
-            valor = float(input(mensaje))
-            if 0 <= valor <= 10:
-                return valor
-            print("La nota debe estar entre 0 y 10.")
-        except ValueError:
-            print("Introduce un número válido.")
+            n = float(input(msg))
+            if 0 <= n <= 10: return n
+        except ValueError: pass
+        print("Error: Nota válida entre 0 y 10.")
 
-def ejecutar_consulta(query, params=()):
+def query(sql, params=(), multi=False):
     conn = obtener_conexion()
     cursor = conn.cursor()
-    cursor.execute(query, params)
-    resultados = cursor.fetchall()
+    cursor.execute(sql, params)
+    res = cursor.fetchall() if multi else conn.commit()
     conn.close()
-    return resultados
+    return res
 
-def ejecutar_modificacion(query, params=()):
-    conn = obtener_conexion()
-    cursor = conn.cursor()
-    try:
-        cursor.execute(query, params)
-        conn.commit()
-    except sqlite3.IntegrityError as e:
-        print(f"Error de integridad: {e}")
-    finally:
-        conn.close()
-
-def crear_alumno():
-    nombre = pedir_texto("Nombre del alumno: ")
-    ejecutar_modificacion("INSERT INTO alumnos (nombre) VALUES (?)", (nombre,))
-
-def crear_asignatura():
-    nombre = pedir_texto("Nombre de la asignatura: ")
-    ejecutar_modificacion("INSERT INTO asignaturas (nombre) VALUES (?)", (nombre,))
-
-def listar_alumnos():
-    return ejecutar_consulta("SELECT id, nombre FROM alumnos")
-
-def listar_asignaturas():
-    return ejecutar_consulta("SELECT id, nombre FROM asignaturas")
-
-def seleccionar_id(lista, tipo):
-    if not lista:
+def seleccionar_id(tabla, tipo):
+    items = query(f"SELECT id, nombre FROM {tabla}", multi=True)
+    if not items:
         print(f"No hay {tipo} registrados.")
         return None
-    
-    ids_validos = []
-    for item in lista:
-        print(f"ID: {item[0]} - Nombre: {item[1]}")
-        ids_validos.append(item[0])
-    
+    for i in items: print(f"{i[0]}: {i[1]}")
     while True:
         try:
-            seleccion = int(input(f"Seleccione el ID del {tipo}: "))
-            if seleccion in ids_validos:
-                return seleccion
-            print("ID no válido.")
-        except ValueError:
-            print("Introduce un número.")
-
-def gestionar_nota():
-    alumno_id = seleccionar_id(listar_alumnos(), "alumno")
-    if alumno_id is None: return
-    
-    asignatura_id = seleccionar_id(listar_asignaturas(), "asignatura")
-    if asignatura_id is None: return
-    
-    nota = pedir_nota("Introduce la nota: ")
-    ejecutar_modificacion("""
-        INSERT INTO notas (alumno_id, asignatura_id, nota) 
-        VALUES (?, ?, ?)
-        ON CONFLICT(alumno_id, asignatura_id) DO UPDATE SET nota = excluded.nota
-    """, (alumno_id, asignatura_id, nota))
-
-def mostrar_notas():
-    query = """
-        SELECT alumnos.nombre, asignaturas.nombre, notas.nota
-        FROM notas
-        JOIN alumnos ON notas.alumno_id = alumnos.id
-        JOIN asignaturas ON notas.asignatura_id = asignaturas.id
-    """
-    resultados = ejecutar_consulta(query)
-    if not resultados:
-        print("No hay notas registradas.")
-    else:
-        for r in resultados:
-            print(f"Alumno: {r[0]} | Asignatura: {r[1]} | Nota: {r[2]}")
+            sel = int(input(f"Elija ID de {tipo}: "))
+            if sel in [i[0] for i in items]: return sel
+        except ValueError: pass
+        print("ID no válido.")
 
 def menu():
-    crear_tablas()
+    inicializar_db()
     while True:
-        print("\n--- GESTIÓN DE NOTAS ---")
-        print("1. Crear alumno")
-        print("2. Crear asignatura")
-        print("3. Asignar o actualizar nota")
-        print("4. Mostrar notas")
-        print("5. Salir")
-        
-        opcion = input("Seleccione una opción: ")
-        
-        if opcion == "1": crear_alumno()
-        elif opcion == "2": crear_asignatura()
-        elif opcion == "3": gestionar_nota()
-        elif opcion == "4": mostrar_notas()
-        elif opcion == "5": break
-        else: print("Opción no válida.")
+        print("\n1.Crear Alumno\n2.Crear Asignatura\n3.Nota\n4.Mostrar\n5.Salir")
+        op = input("Opción: ")
+        if op == "1":
+            try: query("INSERT INTO alumnos (nombre) VALUES (?)", (pedir_texto("Nombre: "),))
+            except: print("Ya existe.")
+        elif op == "2":
+            try: query("INSERT INTO asignaturas (nombre) VALUES (?)", (pedir_texto("Asignatura: "),))
+            except: print("Ya existe.")
+        elif op == "3":
+            aid = seleccionar_id("alumnos", "alumno")
+            sid = seleccionar_id("asignaturas", "asignatura")
+            if aid and sid:
+                nt = pedir_nota("Nota: ")
+                query("INSERT INTO notas VALUES (?,?,?) ON CONFLICT(alumno_id, asignatura_id) DO UPDATE SET nota=excluded.nota", (aid, sid, nt))
+        elif op == "4":
+            sql = "SELECT al.nombre, asig.nombre, n.nota FROM notas n JOIN alumnos al ON n.alumno_id = al.id JOIN asignaturas asig ON n.asignatura_id = asig.id"
+            for r in query(sql, multi=True): print(f"{r[0]} | {r[1]} | Nota: {r[2]}")
+        elif op == "5": break
 
 if __name__ == "__main__":
     menu()
