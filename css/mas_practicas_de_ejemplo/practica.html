@@ -25,25 +25,23 @@
 </head>
 <body class="bg-gray-200">
 
-    <header class="bg-green-500 text-white">
-    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-4">
-        <a href="#" class="inline-flex items-center gap-3 mb-4 md:mb-0" aria-label="Inicio - Mi Logo">
-            <div class="w-9 h-9 flex items-center justify-center bg-white rounded-full shadow-md">
-                <span class="text-blue-600 font-extrabold">M</span>
-            </div>
-            <span class="text-lg font-bold tracking-wide">
-                Mi<span class="text-blue-200">Logo</span>
-            </span>
-        </a>
+   <header class="bg-green-500 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-4">
+            <a href="#" class="inline-flex items-center gap-3 mb-4 md:mb-0">
+                <div class="w-9 h-9 flex items-center justify-center bg-white rounded-full">
+                    <span class="text-blue-600 font-extrabold">M</span>
+                </div>
+                <span class="text-lg font-bold tracking-wide">Mi<span class="text-blue-200">Logo</span></span>
+            </a>
 
-        <nav class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-            <a href="#hero" class="hover:text-blue-300 font-medium focus:focus-ring-2 outline-none">Inicio</a>
-            <a href="#products" class="hover:text-blue-300 font-medium focus:focus-ring-2 outline-none">Productos</a>
-            <a href="#gallery" class="hover:text-blue-300 font-medium focus:focus-ring-2 outline-none">Galeria</a>
-            <a href="#contact" class="hover:text-blue-300 font-medium focus:focus-ring-2 outline-none">Contactos</a>
-        </nav>
-    </div>
-</header>
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <a href="#hero" class="hover:text-blue-300 font-medium text-sm md:text-base">Inicio</a>
+                <a href="#products" class="hover:text-blue-300 font-medium text-sm md:text-base">Productos</a>
+                <a href="#gallery" class="hover:text-blue-300 font-medium text-sm md:text-base">Galeria</a>
+                <a href="#contact" class="hover:text-blue-300 font-medium text-sm md:text-base">Contactos</a>
+            </nav>
+        </div>
+    </header>
 
     <section id="hero" class="bg-blue-100 p-20 flex flex-col items-center">
         <h1 class="text-4xl font-extrabold text-gray-800 mb-4">Bienvenido a mi página</h1>
@@ -55,6 +53,7 @@
     <section id="products" class="py-16 px-6 container mx-auto">
         <h1 class="text-3xl font-extrabold mb-6 text-gray-800">Productos</h1>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
             <div class="p-6 bg-white rounded-xl shadow-sm border border-gray-200 text-center transition-all hover:shadow-md hover:-translate-y-1">
                 <div class="mb-3 overflow-hidden rounded-lg">
                     <img src="https://picsum.photos/300/200?random=1" alt="Producto Aleatorio" class="h-40 object-cover w-full">
@@ -131,7 +130,7 @@
 
                    <button type="submit" 
                     class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg shadow-md
-                    hover:bg-blue-700 hover:shadow-lg focus:ring-4 focus:ring-blue-300 focus:outline-none
+                    hover:bg-blue-700  hover:shadow-lg focus:ring-4 focus:ring-blue-300 focus:outline-none
                     transition-all duration-300 active:scale-[0.98]">
                     Enviar Mensaje
                 </button>
@@ -141,7 +140,7 @@
     </section>
 
     <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row sm:flex-col justify-between items-center">
         
         <div class="mb-4 md:mb-0 text-center md:text-left">
             <p class="text-sm">&copy; 2026 Tu Empresa. Todos los derechos reservados.</p>
