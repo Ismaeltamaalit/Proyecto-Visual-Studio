@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texto</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./src/output.css" rel="stylesheet">    <style>
         /* Estilos CSS adicionales */
         
     </style>
@@ -13,9 +13,9 @@
 <body class="bg-slate-700 text-white">
  
     <!-- Encabezado -->
-    <header class="  pb-2">
-        <div class="flex flex-row justify-between mb-8  ">
-            <h1 class=" text-2xl font-medium hover:text-3xl hover:text-red-200">Mi empresa</h1>
+    <header class="  p-2 w-full">
+        <div class="container mx-auto flex flex-row justify-between mb-8  ">
+            <h1 class=" text-2xl font-medium hover:text-3xl hover:text-red-200 cursor-pointer transition-all">Mi empresa</h1>
             <nav class="flex flex-col md:flex-row    space-y-4 md:space-y-0 md:space-x-6 items-center">
                 
                     <a href="#hero" class="font-medium hover:text-red-200">Inicio</a>
@@ -28,30 +28,29 @@
     </header>
  
     
-    <section id="hero" class=" p-20 flex items-center px-6 bg-gradient-to-b from-slate-600 to-slate-700">
-        <div class="flex flex-col gap-6 max-w-2xl items-center text-center ">
-            <h2 class="text-4xl md:text-6xl font-extrabold hover:text-red-200 ">Bienvenido a mi pagina de ejemplo</h2>
-            <p class="font-medium text-slate-300 tex-lg md:text-xl  ">Subtexto de la pagina de ejemplo</p>
-            <button class="bg-red-400 hover:bg-red-500 text-slate-900 px-5 rounded-xl font-bold py-3 px-8 rounded-full transition-all 
-            duration-300 hover:scale-105 shadow-lg active:scale-95 ">botón</button>
-        </div>
-    </section>
+   <section id="hero" class="p-20 flex items-center justify-center px-6 bg-gradient-to-b from-slate-600 to-slate-700">
+    <div class="flex flex-col gap-8 max-w-2xl items-center text-center">
+        <h2 class="text-4xl md:text-6xl font-extrabold hover:text-red-200 text-center leading-tight">Bienvenido a mi pagina de ejemplo</h2>
+        <p class="font-medium text-slate-300 text-lg md:text-2xl">Subtexto de la pagina de ejemplo</p>
+        <button class="bg-red-400 hover:bg-red-500 text-slate-900 px-8 rounded-full font-bold py-3 transition-all duration-300 hover:scale-105 shadow-lg active:scale-95">botón</button>
+    </div>
+</section>
  
     <!-- Video Promocional -->
     <section class="py-10 bg-slate-800 text-center">
         <h2 class="text-2xl font-bold mb-6">Video Promocional</h2>
-        <div class="max-w-3xl mx-auto px-4">
+        <div class="max-w-3xlmx-auto px-4">
             <video class="w-full rounded-lg shadow-lg" controls>
-                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.mp4" type="video/mp4" alt="video que no se ve">
                 Tu navegador no soporta la etiqueta de video.
             </video>
         </div>
     </section>
  
     <section id="product" class="py-16 px-6 container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-10">Nuestros Productos</h2>
+        <h2 class="text-3xl font-bold text-center mb-16">Nuestros Productos</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             <div class="p-6 bg-slate-600 rounded-xl shadow-sm border border-slate-500 text-center transition-all hover:shadow-md hover:-translate-y-1">
                 <img src="https://picsum.photos/300/200?random=1" alt="Producto 1" class="w-full h-40 object-cover rounded-lg mb-4">
@@ -88,21 +87,24 @@
     <!-- Sección de Contacto -->
     <section id="contacto" class="py-16 px-6 bg-slate-700">
         <div class="max-w-xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Contáctanos</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 hover:text-red-200">Contáctanos</h2>
             <form class="flex flex-col gap-4 bg-slate-600 p-8 rounded-2xl shadow-lg border border-slate-500">
                 <div class="flex flex-col gap-2">
                     <label class="font-medium text-sm text-slate-300">Nombre:</label>
-                    <input type="text" class="bg-slate-700 border border-slate-500 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition-all">
+                    <input type="text" class="bg-slate-700 border border-slate-500 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition-all"
+                    placeholder="Nombre...">
                 </div>
 
                 <div class="flex flex-col gap-2">
                     <label class="font-medium text-sm text-slate-300">Correo Electrónico:</label>
-                    <input type="email" class="bg-slate-700 border border-slate-500 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition-all">
+                    <input type="email" class="bg-slate-700 border border-slate-500 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition-all"
+                    placeholder="ejemplo@email.com">
                 </div>
 
                 <div class="flex flex-col gap-2">
                     <label class="font-medium text-sm text-slate-300">Mensaje:</label>
-                    <textarea class="bg-slate-700 border border-slate-500 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition-all" rows="4"></textarea>
+                    <textarea class="bg-slate-700 border border-slate-500 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition-all" rows="4"
+                    placeholder="MENSAJE..."></textarea>
                 </div>
 
                 <button class="bg-red-400 hover:bg-red-500 text-slate-900 font-bold py-3 rounded-lg mt-2 transition-colors">
@@ -126,4 +128,4 @@
     </footer>
  
 </body>
-</html>
+</html> 
