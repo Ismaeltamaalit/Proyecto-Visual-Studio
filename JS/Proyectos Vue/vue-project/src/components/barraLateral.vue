@@ -6,9 +6,9 @@
     <h3 class="titulo">Menú</h3>
     <nav>
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#tareas">Tareas</a></li>
-        <li><a href="#contador">Contador</a></li>
+        <li><router-link to="/tareas">Tareas</router-link></li>
+        <li><router-link to="/contador">Contador</router-link></li>
+        <li><router-link to="/registrar">Registrar</router-link></li>
       </ul>
     </nav>
   </aside>
@@ -17,7 +17,7 @@
 <style scoped>
 .barra-lateral {
   width: 220px;
-  background: #ffffff;
+  background: #fff;
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   border-right: 4px solid #1e66f5;
@@ -31,7 +31,7 @@
 
 .titulo {
   margin: 0 0 1rem 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #1e66f5;
   text-align: center;
 }
@@ -60,7 +60,6 @@
   color: #0f49d1;
 }
 
-/* responsive */
 @media (max-width: 800px) {
   .barra-lateral {
     position: static;
