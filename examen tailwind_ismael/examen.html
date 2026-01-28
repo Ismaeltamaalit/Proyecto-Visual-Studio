@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <link href="./src/output.css" rel="stylesheet">    
+
+    <style>
+        /* Estilos CSS adicionales */
+        
+    </style>
+</head>
+<body class="bg-sky-200">
+ <!--
+    La  barra de navegación con el nombre de la empresa tiene un sencillo color celeste, las letras en negro y para marcar por donde pasa el ratón he puesto eso
+    de rojo.-->
+    <!-- Encabezado: -->
+    <header class="bg-sky-100 ">
+        <div class="flex flex-col md:flex-row container mx-auto justify-between">
+            <h1 class="text-3xl font-extrabold hover:text-red-500">TaskFlow</h1>
+            <nav class="font-medium space-y-4 md:space-y-0 md:space-x-6 text-lg p-3">
+                    <a href="#hero" class="hover:text-red-500">Inicio</a>
+                    <a href="#producto" class="hover:text-red-500">Productos</a>
+                    <a href="#gallery" class="hover:text-red-500">Galería</a>
+                    <a href="#contact" class="hover:text-red-500">Contacto</a>
+
+            </nav>
+        </div>
+    </header>
+ 
+    <!-- Sección Hero -->
+
+    <!--
+    El hero es bien sencillo, he centrado el texto-->
+    <section id="hero" class="bg-sky-100 py-20 px-6 flex flex-col items-center text-center">
+        
+            <h2 class="text-3xl font-extrabold hover:text-red-500">TaskFlow</h2>
+            <p class="text-lg text-gray-500">TaskFlow ofrece una herramienta online para la gestión de tareas y equipos, orientada a pequeñas empresas y startups.</p>
+            <button class="px-8 py-3 bg-sky-300 shadow-md rounded-xl font-medium items-center hover:bg-sky-400 transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95">Siga explorando</button>
+        
+    </section>
+ 
+  
+
+
+    <!--
+    
+    En la seccion de productos he creado unas tarjetas, la mayoria con un fondo blanco, la primera tiene una animacion
+    de pulso, y la cuarta destaca con un gradiente porque se supone que es una oferta especial, 
+    si supiera más de ordenadores las especificaciones falsas serían realistas pero la idea es que destaque la cuarta 
+    
+    -->
+    <section id="producto" class="py-20 px-6 overflow-hidden bg-sky-200 ">
+        <h2 class="text-3xl mb-2 font-extrabold hover:text-red-700 text-center ">Productos a la Venta</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-20">
+            <div class="bg-white border border-black p-5 shadow-lg rounded-xl animation animate-pulse  ">
+                <img src="img1.jpg" class=" h-40 w-fit object-cover">
+                <h3 class="text-xl font-bold">Ordenador Gaming:</h3>
+                <p class="font-medium text-sm mb-2">Ordenador de Gama Alta RAIZEN 782 XVI 8k PIXELES</p>
+                <p class=" font-bold text-sm italic">800$</p>
+                <button class="bg-purple-200 rounded-xl py-4 px-10 transition-all duration-300 hover:bg-purple-300 active:scale-95">Comprar Ahora </button>
+            </div>
+            <div class="bg-white p-10 shadow-lg rounded-xl border border-black transition-all hover:shadow-2xl hover:-translate-1">
+                <img src="img2.jpg" class="h-40 w-fit object-cover rounded-xl">
+                <h3 class="text-xl font-bold ">Ordenador de Trabajo</h3>
+                <p class="font-medium text-sm mb-2">Toshiba Intel Core Duo 2 </p>
+                <p class=" font-bold text-sm italic">300$</p>
+                <button class="bg-purple-200 rounded-xl py-4 px-10 transition-all duration-300 hover:bg-purple-300 active:scale-95">Comprar Ahora </button>
+            </div>
+
+            <div class="bg-white p-5 shadow-lg rounded-xl border border-black transition-all hover:shadow-2xl hover:-translate-1">
+                <img src="img4.jpg" class="h-40 w-fit object-cover rounded-xl">
+                <h3 class="text-xl font-bold ">Ordenador de Trabajo</h3>
+                <p class="font-medium text-sm mb-2">HP NVIDIA-2080x RAIZEN 4k Complementos Incluidos </p>
+                <p class=" font-bold text-sm italic">1500$</p>
+                <button class="bg-purple-200 rounded-xl py-4 px-10 transition-all duration-300 hover:bg-purple-300 active:scale-95">Comprar Ahora </button>
+            </div>
+
+            <div class="bg-gradient-to-b from-blue-900 to-purple-500 p-5 shadow-md rounded-xl border border-black transition-all hover:shadow-2xl hover:-translate-1">
+                <img src="img6.jpg" class="h-40 w-fit object-cover rounded-xl ">
+                <h3 class="text-2xl font-extrabold">OFERTA ESPECIAL TaskFlow!!!!!</h3>
+                <p class="font-medium text-sm mb-3 ">HP NVIDIA-9000-GOLD PREMIUM PLACA BASE DIAMOND-Intel  RAIZEN 12k</p>
+                <p class=" font-bold text-sm italic">2000$</p>
+                <button class="bg-purple-200 rounded-xl py-4 px-10 transition-all duration-300 hover:bg-purple-300 active:scale-95">Comprar Ahora </button>
+            </div>
+   
+        </div>
+    </section>
+ 
+    <!-- Galería de Imágenes -->
+     <!--
+    He tratado de hacer una galería interactiva, pero lo más cercano que he llegado a hacer de lo enseñado es lo que me ha salido-->
+    <section id="gallery">
+        <h2 class="text-2xl font-extrabold mt-5 mb-2 text-center hover:text-3xl">Galería de imagenes de productos</h2>
+        <div class="flex flex-col md:flex-row   p-10">
+            <img src="img2.jpg" class="h-20 w-fit object-cover rounded-xl transition-all duration-300 hover:h-64">
+            <img src="img3.jpg" class="h-20 w-fit  rounded-xl transition-all duration-300 hover:h-64">
+            <img src="img4.jpg" class="h-20 w-fit  rounded-xl transition-all duration-300 hover:h-64">
+            <img src="img6.jpg" class="h-20 w-fit object-cover rounded-xl transition-all duration-300 hover:h-64">
+ 
+        </div>
+    </section>
+ 
+    <!-- Sección de Contacto -->
+
+    <section id="contact" class=" bg-slate-300 gap-4 py-16 px-6  ">
+        <h2 class="text-xl font-bold">Datos de contacto</h2>
+        
+        <form class="flex flex-col justify-center p-10 text-center ">
+            <label class=" font-medium text-sm">Nombre:</label>
+            <input type="text" class="bg-slate-100 border border-slate-500 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition-all"
+                    placeholder="Nombre..."> 
+            <label class="font-medium text-sm">Numero de telefono:</label>
+            <input type="text" class="bg-slate-100 border border-slate-500 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition-all"
+                    placeholder="Telefono...">  
+            
+ 
+                <button class="bg-sky-200 rounded-xl py-4 px-5 mt-5 transition-all duration-300 hover:bg-sky-400 active:scale-95">Enviar</button>
+        </form>
+    </section>
+ 
+    <!-- Footer -->
+    <footer class="bg-gray-600">
+        <div class="text-sm flex justify-between py-6 px-2">
+            <p class="text-white ">© 2026 TaskFlow S.A</p>
+            <div class="space-x-4">
+                <a href="#" class="text-white text-xs hover:text-red-400">Acuerdo Legal</a>
+                <a href="#" class="text-white text-xs hover:text-red-400">Hoja de Reclamaciones</a>
+                <a href="#" class="text-white text-xs hover:text-red-400">Algo</a>
+            </div>
+        </div>
+    </footer>
+ 
+</body>
+</html>
