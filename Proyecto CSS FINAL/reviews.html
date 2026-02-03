@@ -2,42 +2,69 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>VG.BLOG | Inicio</title>
+  <title>Reviews | VG.BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bgMain: '#121212',
+          bgSecondary: '#1e1e1e',
+          textSecondary: '#b3b3b3',
+          accent: '#3b82f6'
+        }
+      }
+    }
+  }
+</script>
 
-  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-  <header class="header">
-    <div class="container">
-      <h1 class="logo">VG.BLOG</h1>
+<body class="bg-bgMain text-white">
 
-      <nav class="nav">
-        <a href="index.html">Inicio</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="noticias.html">Noticias</a>
-        <a href="guias.html">Guías</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
-    </div>
-  </header>
+<!-- HEADER (igual que index) -->
+<header class="bg-bgSecondary border-b border-neutral-800">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">VG.BLOG</h1>
+    <nav class="flex gap-6 text-textSecondary">
+      <a href="index.html" class="hover:text-white">Inicio</a>
+      <a href="reviews.html" class="text-white">Reviews</a>
+      <a href="noticias.html" class="hover:text-white">Noticias</a>
+      <a href="guias.html" class="hover:text-white">Guías</a>
+      <a href="contacto.html" class="hover:text-white">Contacto</a>
+    </nav>
+  </div>
+</header>
 
-  <main class="container">
-    <h2>Bienvenido a VG.BLOG</h2>
-    <p>Noticias, análisis y guías del mundo del videojuego.</p>
-  </main>
+<main class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold mb-10">Reviews de videojuegos</h2>
 
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>© vg.blog</p>
-      <div class="footer-links">
-        <a href="#">Política de privacidad</a>
-        <a href="#">Términos de uso</a>
-      </div>
-    </div>
-  </footer>
+  <div class="grid gap-6 md:grid-cols-3">
+    <article class="bg-bgSecondary p-6 rounded-lg">
+      <h3 class="font-semibold mb-2">Juego AAA</h3>
+      <p class="text-textSecondary text-sm">Análisis completo del último lanzamiento.</p>
+    </article>
 
-  <script src="/js/main.js"></script>
+    <article class="bg-bgSecondary p-6 rounded-lg">
+      <h3 class="font-semibold mb-2">Indie destacado</h3>
+      <p class="text-textSecondary text-sm">Una joya independiente que merece atención.</p>
+    </article>
+
+    <article class="bg-bgSecondary p-6 rounded-lg">
+      <h3 class="font-semibold mb-2">Clásico revisitado</h3>
+      <p class="text-textSecondary text-sm">¿Sigue siendo tan bueno hoy?</p>
+    </article>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-bgSecondary border-t border-neutral-800">
+  <div class="max-w-6xl mx-auto px-6 py-6 text-textSecondary text-sm">
+    © vg.blog
+  </div>
+</footer>
+
 </body>
 </html>
