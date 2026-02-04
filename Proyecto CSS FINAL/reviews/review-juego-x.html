@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Review: Juego X — VG.BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { bgMain: '#121212', bgSecondary: '#1e1e1e', textSecondary: '#b3b3b3', accent: '#3b82f6' } } } }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-bgMain text-white min-h-screen flex flex-col">
+<header class="bg-bgSecondary border-b border-neutral-800">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold">VG.BLOG</h1>
+    <nav class="flex gap-6 text-textSecondary">
+      <a href="../index/index.html" class="nav-link hover:text-white">Inicio</a>
+      <a href="../reviews/index.html" class="nav-link hover:text-white">Reviews</a>
+      <a href="../noticias/index.html" class="nav-link hover:text-white">Noticias</a>
+      <a href="../guias/index.html" class="nav-link hover:text-white">Guías</a>
+      <a href="../contacto/index.html" class="nav-link hover:text-white">Contacto</a>
+    </nav>
+  </div>
+</header>
+<main class="max-w-5xl mx-auto px-6 py-12">
+  <article class="bg-bgSecondary p-6 rounded-lg">
+    <div class="flex gap-6">
+      <img src="https://picsum.photos/seed/juegoX/400/400" alt="Portada Juego X" class="w-64 h-64 object-cover rounded-md">
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Review: Juego X</h2>
+        <div class="text-textSecondary text-sm mb-4">2026-01-15 · PC · Puntuación: 8.5</div>
+        <p class="text-textSecondary mb-4">Juego X ofrece combates fluidos y una narrativa sorprendentemente madura. El rendimiento en PC es estable y las opciones de personalización son un plus. Recomendado para quienes buscan un desafío con buena curva de aprendizaje.</p>
+        <a href="./index.html" class="text-sm text-textSecondary hover:text-white">← Volver a Reviews</a>
+      </div>
+    </div>
+  </article>
+</main>
+<footer class="bg-bgSecondary border-t border-neutral-800 mt-auto">
+  <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-textSecondary">
+    <p class="text-sm">© vg.blog</p>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

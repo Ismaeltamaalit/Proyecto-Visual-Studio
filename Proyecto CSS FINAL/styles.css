@@ -81,3 +81,55 @@ main h2 {
   margin-left: 1rem;
   color: var(--text-secondary);
 }
+
+/* Reveal animation */
+.reveal { opacity: 0; transform: translateY(8px); transition: transform .5s ease, opacity .5s ease; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* Card hover shadow */
+.card-hover:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: translateY(-4px); transition: transform .2s ease, box-shadow .2s ease; }
+
+/* Small utility */
+.icon { width: 3rem; height: 3rem; }
+
+/* cover thumbnails (mejoradas) */
+.cover {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  background: linear-gradient(rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+  display: block;
+  flex-shrink: 0;
+}
+
+.card-hover:hover .cover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.65);
+}
+
+@media (max-width:640px) {
+  .cover { width: 4.5rem; height: 4.5rem; }
+}
+
+/* small cover for icons in lists */
+.cover-sm {
+  width: 4.2rem;
+  height: 4.2rem;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.55);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card-hover:hover .cover-sm {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.65);
+}
+
+@media (max-width:640px) { .cover-sm { width: 3.2rem; height: 3.2rem; } }
+

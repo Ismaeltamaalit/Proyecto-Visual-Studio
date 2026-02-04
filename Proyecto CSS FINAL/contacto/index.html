@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VG.BLOG | Contacto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgMain: '#121212',
+            bgSecondary: '#1e1e1e',
+            textSecondary: '#b3b3b3',
+            accent: '#3b82f6'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-bgMain text-white min-h-screen flex flex-col">
+
+<header class="bg-bgSecondary border-b border-neutral-800">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold">VG.BLOG</h1>
+
+    <nav class="flex gap-6 text-textSecondary">
+      <a href="../index/index.html" class="nav-link hover:text-white">Inicio</a>
+      <a href="../reviews/index.html" class="nav-link hover:text-white">Reviews</a>
+      <a href="../noticias/index.html" class="nav-link hover:text-white">Noticias</a>
+      <a href="../guias/index.html" class="nav-link hover:text-white">Guías</a>
+      <a href="../contacto/index.html" class="nav-link hover:text-white">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-6 py-12">
+  <div class="flex items-center gap-4 mb-4">
+    <img src="../images/contact.svg" alt="" class="w-10 h-10 rounded-md">
+    <h2 class="text-3xl font-semibold m-0">Contacto</h2>
+  </div>
+  <p class="text-textSecondary mb-6">¿Tienes una propuesta, colaboración o quieres dejar feedback? Escríbenos.</p>
+
+  <form id="contact-form" class="bg-bgSecondary p-6 rounded-lg space-y-4 reveal">
+    <div>
+      <label class="block text-sm mb-1">Nombre</label>
+      <input name="name" type="text" class="w-full bg-neutral-800 rounded-md px-3 py-2 text-sm" required />
+    </div>
+
+    <div>
+      <label class="block text-sm mb-1">Email</label>
+      <input name="email" type="email" class="w-full bg-neutral-800 rounded-md px-3 py-2 text-sm" required />
+    </div>
+
+    <div>
+      <label class="block text-sm mb-1">Mensaje</label>
+      <textarea name="message" rows="5" class="w-full bg-neutral-800 rounded-md px-3 py-2 text-sm" required></textarea>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <button type="submit" class="bg-accent px-4 py-2 rounded-md font-semibold">Enviar</button>
+      <div id="contact-msg" class="text-sm text-textSecondary"></div>
+    </div>
+  </form>
+</main>
+
+<footer class="bg-bgSecondary border-t border-neutral-800 mt-auto">
+  <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-textSecondary">
+    <p class="text-sm">© vg.blog</p>
+    <div class="flex gap-4 text-sm">
+      <a href="#" class="hover:text-white">Política de privacidad</a>
+      <a href="#" class="hover:text-white">Términos de uso</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

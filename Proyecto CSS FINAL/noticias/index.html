@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VG.BLOG | Noticias</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgMain: '#121212',
+            bgSecondary: '#1e1e1e',
+            textSecondary: '#b3b3b3',
+            accent: '#3b82f6'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-bgMain text-white min-h-screen flex flex-col">
+
+<header class="bg-bgSecondary border-b border-neutral-800">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold">VG.BLOG</h1>
+
+    <nav class="flex gap-6 text-textSecondary">
+      <a href="../index/index.html" class="nav-link hover:text-white">Inicio</a>
+      <a href="../reviews/index.html" class="nav-link hover:text-white">Reviews</a>
+      <a href="../noticias/index.html" class="nav-link hover:text-white">Noticias</a>
+      <a href="../guias/index.html" class="nav-link hover:text-white">Guías</a>
+      <a href="../contacto/index.html" class="nav-link hover:text-white">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-12">
+  <h2 class="text-3xl font-semibold mb-6">Últimas noticias</h2>
+
+  <div id="news-list" class="space-y-4">
+    <article class="bg-bgSecondary p-4 rounded-lg news-item reveal flex items-start gap-4 card-hover">
+      <img src="https://picsum.photos/seed/noticia1/300/300" alt="Miniatura: Nueva consola anunciada" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Nueva consola anunciada</h3>
+        <p class="text-textSecondary text-sm">La industria se prepara para un nuevo salto generacional.</p>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-4 rounded-lg news-item reveal flex items-start gap-4 card-hover">
+      <img src="https://picsum.photos/seed/noticia2/300/300" alt="Miniatura: Evento gaming esta semana" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Evento gaming esta semana</h3>
+        <p class="text-textSecondary text-sm">Todo lo que esperamos ver en la próxima conferencia.</p>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-4 rounded-lg news-item reveal flex items-start gap-4 card-hover">
+      <img src="https://picsum.photos/seed/noticia3/300/300" alt="Miniatura: Actualización importante" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Actualización importante</h3>
+        <p class="text-textSecondary text-sm">Cambios clave en uno de los juegos más jugados.</p>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-4 rounded-lg news-item hidden reveal flex items-start gap-4 card-hover">
+      <img src="https://picsum.photos/seed/noticia4/300/300" alt="Miniatura: Parche de balance publicado" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Parche de balance publicado</h3>
+        <p class="text-textSecondary text-sm">Notas del parche con ajustes competitivos.</p>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-4 rounded-lg news-item hidden reveal flex items-start gap-4 card-hover">
+      <img src="https://picsum.photos/seed/noticia5/300/300" alt="Miniatura: Torneo local del fin de semana" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Torneo local del fin de semana</h3>
+        <p class="text-textSecondary text-sm">Equipos y brackets anunciados.</p>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-4 rounded-lg news-item hidden reveal flex items-start gap-4 card-hover">
+      <img src="https://picsum.photos/seed/noticia6/300/300" alt="Miniatura: Rumor: nueva expansión" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Rumor: nueva expansión</h3>
+        <p class="text-textSecondary text-sm">Filtraciones apuntan a una expansión este año.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="mt-6 text-center">
+    <button id="load-more" class="bg-accent px-4 py-2 rounded-md font-semibold">Cargar más</button>
+  </div>
+</main>
+
+<footer class="bg-bgSecondary border-t border-neutral-800 mt-auto">
+  <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-textSecondary">
+    <p class="text-sm">© vg.blog</p>
+    <div class="flex gap-4 text-sm">
+      <a href="#" class="hover:text-white">Política de privacidad</a>
+      <a href="#" class="hover:text-white">Términos de uso</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

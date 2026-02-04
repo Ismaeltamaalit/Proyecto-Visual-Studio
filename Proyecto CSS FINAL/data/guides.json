@@ -1,0 +1,24 @@
+{
+  "guides": [
+    {
+      "id": "g-configuracion-ideal",
+      "title": "Configuración ideal para principiantes",
+      "slug": "configuracion-ideal-principiantes",
+      "date": "2026-01-15",
+      "summary": "Ajustes recomendados para obtener un rendimiento estable en partidas online.",
+      "content": "Explicamos una combinación de opciones gráficas y de red para conseguir 60 FPS estables en la mayoría de hardware de gama media. Paso a paso con capturas de ejemplo.",
+      "image": "https://picsum.photos/seed/guide1/400/400",
+      "tags": ["guia","rendimiento"]
+    },
+    {
+      "id": "g-estrategias-principales",
+      "title": "Guía de estrategias básicas",
+      "slug": "guia-estrategias-basicas",
+      "date": "2026-01-20",
+      "summary": "Conceptos y trucos para mejorar la toma de decisiones en partida.",
+      "content": "Desde control de recursos hasta toma de objetivos, esta guía introduce patrones que ayudan a escalar desde partidas casuales a competitivas.",
+      "image": "https://picsum.photos/seed/guide2/400/400",
+      "tags": ["estrategia","principiantes"]
+    }
+  ]
+}

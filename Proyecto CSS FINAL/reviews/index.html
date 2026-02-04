@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VG.BLOG | Reviews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgMain: '#121212',
+            bgSecondary: '#1e1e1e',
+            textSecondary: '#b3b3b3',
+            accent: '#3b82f6'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-bgMain text-white min-h-screen flex flex-col">
+
+<header class="bg-bgSecondary border-b border-neutral-800">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold">VG.BLOG</h1>
+
+    <nav class="flex gap-6 text-textSecondary" aria-label="Principal">
+      <a href="../index/index.html" class="nav-link hover:text-white">Inicio</a>
+      <a href="../reviews/index.html" class="nav-link hover:text-white">Reviews</a>
+      <a href="../noticias/index.html" class="nav-link hover:text-white">Noticias</a>
+      <a href="../guias/index.html" class="nav-link hover:text-white">Guías</a>
+      <a href="../contacto/index.html" class="nav-link hover:text-white">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-12">
+  <h2 class="text-3xl font-semibold mb-6">Reviews recientes</h2>
+
+  <div class="grid gap-6 md:grid-cols-2">
+    <article class="bg-bgSecondary p-6 rounded-lg transition-transform transform hover:scale-105 reveal card-hover">
+      <div class="flex items-start gap-4">
+        <img src="https://picsum.photos/seed/juegoX/400/400" alt="Portada Juego X" class="rounded-md object-cover cover">
+        <div>
+          <h3 class="font-semibold text-lg">Review: Juego X</h3>
+          <p class="text-textSecondary text-sm mb-3">Análisis profundo del título X: mecánicas, historia y rendimiento.</p>
+          <div class="flex items-center gap-4">
+            <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm">PC</span>
+            <span class="text-accent font-semibold">8.5</span>
+            <a href="#" class="ml-auto text-sm text-textSecondary hover:text-white open-detail" data-type="review" data-slug="review-juego-x">Leer reseña →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+      <article class="bg-bgSecondary p-6 rounded-lg transition-transform transform hover:scale-105 reveal card-hover">
+      <div class="flex items-start gap-4">
+        <img src="https://picsum.photos/seed/indieY/400/400" alt="Portada Indie Y" class="rounded-md object-cover cover">
+        <div>
+          <h3 class="font-semibold text-lg">Review: Indie Y</h3>
+          <p class="text-textSecondary text-sm mb-3">Un pequeño estudio sorprende con una experiencia memorable.</p>
+          <div class="flex items-center gap-4">
+            <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm">Switch</span>
+            <span class="text-accent font-semibold">9.0</span>
+            <a href="#" class="ml-auto text-sm text-textSecondary hover:text-white open-detail" data-type="review" data-slug="review-indie-y">Leer reseña →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-6 rounded-lg transition-transform transform hover:scale-105 reveal card-hover">
+      <div class="flex items-start gap-4">
+        <img src="https://picsum.photos/seed/shooterZ/400/400" alt="Portada Shooter Z" class="rounded-md object-cover cover">
+        <div>
+          <h3 class="font-semibold text-lg">Review: Shooter Z</h3>
+          <p class="text-textSecondary text-sm mb-3">Multijugador sólido y buenos gráficos, pero la campaña flaquea.</p>
+          <div class="flex items-center gap-4">
+            <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm">PS5</span>
+            <span class="text-accent font-semibold">7.8</span>
+            <a href="#" class="ml-auto text-sm text-textSecondary hover:text-white open-detail" data-type="review" data-slug="review-shooter-z">Leer reseña →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-6 rounded-lg transition-transform transform hover:scale-105 reveal card-hover">
+      <div class="flex items-start gap-4">
+        <img src="https://picsum.photos/seed/retroRemake/400/400" alt="Portada Retro Remake" class="rounded-md object-cover cover">
+        <div>
+          <h3 class="font-semibold text-lg">Review: Retro Remake</h3>
+          <p class="text-textSecondary text-sm mb-3">Fiel al original y con mejoras necesarias; nostalgia asegurada.</p>
+          <div class="flex items-center gap-4">
+            <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm">Multi</span>
+            <span class="text-accent font-semibold">8.9</span>
+            <a href="#" class="ml-auto text-sm text-textSecondary hover:text-white open-detail" data-type="review" data-slug="review-retro-remake">Leer reseña →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="bg-bgSecondary border-t border-neutral-800 mt-auto">
+  <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-textSecondary">
+    <p class="text-sm">© vg.blog</p>
+    <div class="flex gap-4 text-sm">
+      <a href="#" class="hover:text-white">Política de privacidad</a>
+      <a href="#" class="hover:text-white">Términos de uso</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.SITE_DATA = window.SITE_DATA || {};
+window.SITE_DATA.reviews = [
+  {
+    "id": "r-juego-x",
+    "title": "Review: Juego X",
+    "slug": "review-juego-x",
+    "date": "2026-01-15",
+    "platform": "PC",
+    "score": 8.5,
+    "summary": "Un título ambicioso con mecánicas sólidas y una historia que atrapa.",
+    "content": "Juego X ofrece combates fluidos y una narrativa sorprendentemente madura. El rendimiento en PC es estable y las opciones de personalización son un plus. Recomendado para quienes buscan un desafío con buena curva de aprendizaje.",
+    "image": "https://picsum.photos/seed/juegoX/400/400",
+    "tags": ["acción","aventura"]
+  },
+  {
+    "id": "r-indie-y",
+    "title": "Review: Indie Y",
+    "slug": "review-indie-y",
+    "date": "2025-11-02",
+    "platform": "Switch",
+    "score": 9.0,
+    "summary": "Una joya independiente con dirección artística única y diseño de niveles inspirado.",
+    "content": "Indie Y sorprende por su identidad sonora y sus puzzles ingeniosos. No es muy largo pero cada minuto está bien aprovechado. Excelente opción para jugadores que valoran estética y emoción.",
+    "image": "https://picsum.photos/seed/indieY/400/400",
+    "tags": ["indie","arte"]
+  },
+  {
+    "id": "r-shooter-z",
+    "title": "Review: Shooter Z",
+    "slug": "review-shooter-z",
+    "date": "2025-09-20",
+    "platform": "PS5",
+    "score": 7.8,
+    "summary": "Buen multijugador y gráficos de calidad, aunque la campaña no destaca.",
+    "content": "Shooter Z brilla en sus modos online; la sensación de disparo es sólida y la progresión engancha. La campaña, sin embargo, se queda corta en ritmo y objetivos repetitivos.",
+    "image": "https://picsum.photos/seed/shooterZ/400/400",
+    "tags": ["multijugador","fps"]
+  },
+  {
+    "id": "r-retro-remake",
+    "title": "Review: Retro Remake",
+    "slug": "review-retro-remake",
+    "date": "2024-12-01",
+    "platform": "Multi",
+    "score": 8.9,
+    "summary": "Un remake fiel que respeta el original y añade mejoras relevantes.",
+    "content": "Retro Remake trae la nostalgia bien trabajada: mejoras visuales, sonido remasterizado y pequeños añadidos que refrescan la experiencia sin traicionar el original.",
+    "image": "https://picsum.photos/seed/retroRemake/400/400",
+    "tags": ["remake","retro"]
+  }
+];
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

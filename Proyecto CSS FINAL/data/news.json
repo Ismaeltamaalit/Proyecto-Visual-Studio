@@ -1,0 +1,64 @@
+{
+  "news": [
+    {
+      "id": "n-nueva-consola",
+      "title": "Nueva consola anunciada",
+      "slug": "nueva-consola-anunciada",
+      "date": "2026-02-01",
+      "summary": "Una nueva consola promete mejoras en rendimiento y retrocompatibilidad.",
+      "content": "El fabricante X ha presentado su nueva consola con un enfoque en rendimiento y servicios en la nube. Se espera disponibilidad en navidades con varios títulos exclusivos.",
+      "image": "https://picsum.photos/seed/noticia1/400/400",
+      "tags": ["hardware","anuncio"]
+    },
+    {
+      "id": "n-evento-gaming",
+      "title": "Evento gaming esta semana",
+      "slug": "evento-gaming-semana",
+      "date": "2026-01-27",
+      "summary": "Conferencias y presentaciones abrirán la agenda del evento local.",
+      "content": "Organizadores y estudios independientes mostrarán demos, torneos y charlas. Habrá cobertura en directo y resúmenes en nuestras redes.",
+      "image": "https://picsum.photos/seed/noticia2/400/400",
+      "tags": ["evento","cobertura"]
+    },
+    {
+      "id": "n-actualizacion-importante",
+      "title": "Actualización importante",
+      "slug": "actualizacion-importante",
+      "date": "2026-01-10",
+      "summary": "Uno de los títulos más jugados recibe cambios en su sistema competitivo.",
+      "content": "La actualización ajusta el balance y corrige fallos que afectaban al matchmaking. Los desarrolladores han compartido notas completas en su blog.",
+      "image": "https://picsum.photos/seed/noticia3/400/400",
+      "tags": ["parche","balance"]
+    },
+    {
+      "id": "n-parche-balance",
+      "title": "Parche de balance publicado",
+      "slug": "parche-balance-publicado",
+      "date": "2026-01-05",
+      "summary": "Pequeños ajustes a armas y habilidades buscan mejorar el meta.",
+      "content": "Los cambios están orientados a reducir estrategias dominantes y abrir espacio para alternativas tácticas. Se han corregido varios errores visuales.",
+      "image": "https://picsum.photos/seed/noticia4/400/400",
+      "tags": ["parche","notas"]
+    },
+    {
+      "id": "n-torneo-local",
+      "title": "Torneo local del fin de semana",
+      "slug": "torneo-local-fin-semana",
+      "date": "2026-01-18",
+      "summary": "Equipos y brackets se han publicado: participación abierta.",
+      "content": "El torneo contará con premios y retransmisión en streaming para el público. Inscripciones todavía abiertas para categorías amateur.",
+      "image": "https://picsum.photos/seed/noticia5/400/400",
+      "tags": ["torneo","comunidad"]
+    },
+    {
+      "id": "n-rumor-expansion",
+      "title": "Rumor: nueva expansión",
+      "slug": "rumor-nueva-expansion",
+      "date": "2026-02-02",
+      "summary": "Filtraciones sugieren una expansión para este año con nuevo contenido narrativo.",
+      "content": "Fuentes no oficiales apuntan a una expansión centrada en una nueva región y contenido PvE. Habrá que esperar confirmación oficial.",
+      "image": "https://picsum.photos/seed/noticia6/400/400",
+      "tags": ["rumores","expansion"]
+    }
+  ]
+}

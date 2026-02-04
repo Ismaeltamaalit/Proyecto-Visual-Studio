@@ -1,0 +1,8 @@
+{
+  "name": "vg-blog",
+  "version": "1.0.0",
+  "description": "Sitio estático VG.BLOG para desarrollo local",
+  "scripts": {
+    "start": "npx http-server -c-1 -p 8000 ."
+  }
+}

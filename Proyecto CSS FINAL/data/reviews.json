@@ -1,0 +1,52 @@
+{
+  "reviews": [
+    {
+      "id": "r-juego-x",
+      "title": "Review: Juego X",
+      "slug": "review-juego-x",
+      "date": "2026-01-15",
+      "platform": "PC",
+      "score": 8.5,
+      "summary": "Un título ambicioso con mecánicas sólidas y una historia que atrapa.",
+      "content": "Juego X ofrece combates fluidos y una narrativa sorprendentemente madura. El rendimiento en PC es estable y las opciones de personalización son un plus. Recomendado para quienes buscan un desafío con buena curva de aprendizaje.",
+      "image": "https://picsum.photos/seed/juegoX/400/400",
+      "tags": ["acción","aventura"]
+    },
+    {
+      "id": "r-indie-y",
+      "title": "Review: Indie Y",
+      "slug": "review-indie-y",
+      "date": "2025-11-02",
+      "platform": "Switch",
+      "score": 9.0,
+      "summary": "Una joya independiente con dirección artística única y diseño de niveles inspirado.",
+      "content": "Indie Y sorprende por su identidad sonora y sus puzzles ingeniosos. No es muy largo pero cada minuto está bien aprovechado. Excelente opción para jugadores que valoran estética y emoción.",
+      "image": "https://picsum.photos/seed/indieY/400/400",
+      "tags": ["indie","arte"]
+    },
+    {
+      "id": "r-shooter-z",
+      "title": "Review: Shooter Z",
+      "slug": "review-shooter-z",
+      "date": "2025-09-20",
+      "platform": "PS5",
+      "score": 7.8,
+      "summary": "Buen multijugador y gráficos de calidad, aunque la campaña no destaca.",
+      "content": "Shooter Z brilla en sus modos online; la sensación de disparo es sólida y la progresión engancha. La campaña, sin embargo, se queda corta en ritmo y objetivos repetitivos.",
+      "image": "https://picsum.photos/seed/shooterZ/400/400",
+      "tags": ["multijugador","fps"]
+    },
+    {
+      "id": "r-retro-remake",
+      "title": "Review: Retro Remake",
+      "slug": "review-retro-remake",
+      "date": "2024-12-01",
+      "platform": "Multi",
+      "score": 8.9,
+      "summary": "Un remake fiel que respeta el original y añade mejoras relevantes.",
+      "content": "Retro Remake trae la nostalgia bien trabajada: mejoras visuales, sonido remasterizado y pequeños añadidos que refrescan la experiencia sin traicionar el original.",
+      "image": "https://picsum.photos/seed/retroRemake/400/400",
+      "tags": ["remake","retro"]
+    }
+  ]
+}

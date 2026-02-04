@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VG.BLOG | Guías</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgMain: '#121212',
+            bgSecondary: '#1e1e1e',
+            textSecondary: '#b3b3b3',
+            accent: '#3b82f6'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-bgMain text-white min-h-screen flex flex-col">
+
+<header class="bg-bgSecondary border-b border-neutral-800">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold">VG.BLOG</h1>
+
+    <nav class="flex gap-6 text-textSecondary">
+      <a href="../index/index.html" class="nav-link hover:text-white">Inicio</a>
+      <a href="../reviews/index.html" class="nav-link hover:text-white">Reviews</a>
+      <a href="../noticias/index.html" class="nav-link hover:text-white">Noticias</a>
+      <a href="../guias/index.html" class="nav-link hover:text-white">Guías</a>
+      <a href="../contacto/index.html" class="nav-link hover:text-white">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-12">
+  <div class="flex items-center justify-between mb-6">
+    <h2 class="text-3xl font-semibold">Guías y tutoriales</h2>
+    <input id="guide-search" type="search" placeholder="Buscar guías…" class="bg-bgSecondary rounded-md px-3 py-2 text-sm text-textSecondary focus:outline-none focus:ring-2 focus:ring-accent" />
+  </div>
+
+  <div id="guides" class="grid gap-6 md:grid-cols-2">
+    <article class="bg-bgSecondary p-6 rounded-lg reveal flex items-start gap-4 card-hover" data-title="como dominar el combate en juego x">
+      <img src="https://picsum.photos/seed/guia1/300/300" alt="Miniatura: Cómo dominar el combate en Juego X" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Cómo dominar el combate en Juego X</h3>
+        <p class="text-textSecondary text-sm">Consejos prácticos para mejorar tu rendimiento en PvP.</p>
+        <a href="#" class="mt-3 inline-block text-sm text-textSecondary hover:text-white open-detail" data-type="guide" data-slug="configuracion-ideal-principiantes">Leer guía →</a>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-6 rounded-lg reveal flex items-start gap-4 card-hover" data-title="guía para principiantes en indie y">
+      <img src="https://picsum.photos/seed/guia2/300/300" alt="Miniatura: Guía para principiantes en Indie Y" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Guía para principiantes en Indie Y</h3>
+        <p class="text-textSecondary text-sm">Guía paso a paso para empezar sin frustraciones.</p>
+        <a href="#" class="mt-3 inline-block text-sm text-textSecondary hover:text-white open-detail" data-type="guide" data-slug="guia-estrategias-basicas">Leer guía →</a>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-6 rounded-lg reveal flex items-start gap-4 card-hover" data-title="optimizacion de rendimiento ps5">
+      <img src="https://picsum.photos/seed/guia3/300/300" alt="Miniatura: Optimización de rendimiento (PS5)" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Optimización de rendimiento (PS5)</h3>
+        <p class="text-textSecondary text-sm">Ajustes y recomendaciones para mejorar FPS y estabilidad.</p>
+        <a href="#" class="mt-3 inline-block text-sm text-textSecondary hover:text-white open-detail" data-type="guide" data-content="Ajustes y recomendaciones para mejorar FPS y estabilidad. Paso a paso: baja sombras, limita FPS, y prioriza HDR si corresponde.">Leer guía →</a>
+      </div>
+    </article>
+
+    <article class="bg-bgSecondary p-6 rounded-lg reveal flex items-start gap-4 card-hover" data-title="trucos y secretos retro remake">
+      <img src="https://picsum.photos/seed/guia4/300/300" alt="Miniatura: Trucos y secretos: Retro Remake" class="rounded-md object-cover cover-sm">
+      <div>
+        <h3 class="font-semibold">Trucos y secretos: Retro Remake</h3>
+        <p class="text-textSecondary text-sm">Encuentra coleccionables y atajos ocultos.</p>
+        <a href="#" class="mt-3 inline-block text-sm text-textSecondary hover:text-white open-detail" data-type="guide" data-content="Consejos para encontrar coleccionables y usar atajos: revisa las áreas altas con doble salto y revisita niveles después de obtener llaves.">Leer guía →</a>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="bg-bgSecondary border-t border-neutral-800 mt-auto">
+  <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-textSecondary">
+    <p class="text-sm">© vg.blog</p>
+    <div class="flex gap-4 text-sm">
+      <a href="#" class="hover:text-white">Política de privacidad</a>
+      <a href="#" class="hover:text-white">Términos de uso</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.SITE_DATA = window.SITE_DATA || {};
+window.SITE_DATA.guides = [
+  {
+    "id": "g-configuracion-ideal",
+    "title": "Configuración ideal para principiantes",
+    "slug": "configuracion-ideal-principiantes",
+    "date": "2026-01-15",
+    "summary": "Ajustes recomendados para obtener un rendimiento estable en partidas online.",
+    "content": "Explicamos una combinación de opciones gráficas y de red para conseguir 60 FPS estables en la mayoría de hardware de gama media. Paso a paso con capturas de ejemplo.",
+    "image": "https://picsum.photos/seed/guide1/400/400",
+    "tags": ["guia","rendimiento"]
+  },
+  {
+    "id": "g-estrategias-principales",
+    "title": "Guía de estrategias básicas",
+    "slug": "guia-estrategias-basicas",
+    "date": "2026-01-20",
+    "summary": "Conceptos y trucos para mejorar la toma de decisiones en partida.",
+    "content": "Desde control de recursos hasta toma de objetivos, esta guía introduce patrones que ayudan a escalar desde partidas casuales a competitivas.",
+    "image": "https://picsum.photos/seed/guide2/400/400",
+    "tags": ["estrategia","principiantes"]
+  }
+];
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>
