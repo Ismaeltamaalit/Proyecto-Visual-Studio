@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VG.BLOG | Guías</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bgMain: '#121212',
+            bgSecondary: '#1e1e1e',
+            textSecondary: '#b3b3b3',
+            accent: '#3b82f6'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-bgMain text-white font-sans">
+
+<!-- HEADER -->
+<header class="bg-bgSecondary border-b border-neutral-800">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between">
+    <h1 class="text-2xl font-bold">VG.BLOG</h1>
+
+    <nav class="mt-3 md:mt-0 flex gap-6 text-textSecondary">
+      <a href="index.html" class="hover:text-white">Inicio</a>
+      <a href="reviews.html" class="hover:text-white">Reviews</a>
+      <a href="noticias.html" class="hover:text-white">Noticias</a>
+      <a href="guias.html" class="hover:text-white">Guías</a>
+      <a href="contacto.html" class="hover:text-white">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold mb-10">Guías y trucos</h2>
+
+  <div class="grid gap-6 md:grid-cols-2">
+    <article class="bg-bgSecondary p-6 rounded-lg">
+      <h3 class="font-semibold mb-2">Guía para principiantes</h3>
+      <p class="text-textSecondary text-sm">Todo lo que debes saber al empezar.</p>
+    </article>
+
+    <article class="bg-bgSecondary p-6 rounded-lg">
+      <h3 class="font-semibold mb-2">Cómo optimizar tu partida</h3>
+      <p class="text-textSecondary text-sm">Consejos prácticos sin spoilers.</p>
+    </article>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-bgSecondary border-t border-neutral-800">
+  <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+    <p class="text-sm text-textSecondary">© vg.blog</p>
+
+    <div class="flex gap-6 text-sm text-textSecondary">
+      <a href="#" class="hover:text-white">Política de privacidad</a>
+      <a href="#" class="hover:text-white">Términos de uso</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
