@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Actividad 6</title></head>
+<body>
+<div id="galeria"></div>
+<script>
+const xhr=new XMLHttpRequest();
+xhr.open("GET","706.json");
+xhr.onload=()=>{
+ const imgs=JSON.parse(xhr.responseText);
+ galeria.innerHTML=imgs.map(i=>`
+  <figure>
+   <img src="${i.url}" width="200">
+   <figcaption>${i.pie}</figcaption>
+  </figure>`).join("");
+};
+xhr.send();
+</script>
+</body></html>

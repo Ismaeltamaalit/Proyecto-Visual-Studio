@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Actividad 2</title></head>
+<body>
+<button id="btn">Cargar mensaje</button>
+<p id="resultado"></p>
+<script>
+document.getElementById("btn").onclick=()=>{
+ fetch("info.txt").then(r=>r.text()).then(t=>resultado.textContent=t);
+};
+</script>
+</body></html>

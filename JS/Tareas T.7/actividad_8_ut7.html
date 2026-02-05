@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Actividad 8</title></head>
+<body>
+<input type="text" id="input">
+<ul id="lista"></ul>
+<script>
+let datos=[];
+fetch("707.ax.txt").then(r=>r.text()).then(t=>datos=t.split(";"));
+input.addEventListener("input",()=>{
+ lista.innerHTML="";
+ if(!input.value) return;
+ datos.filter(d=>d.toLowerCase().includes(input.value.toLowerCase()))
+ .forEach(d=>{
+  const li=document.createElement("li");
+  li.textContent=d;
+  li.onclick=()=>{input.value=d; lista.innerHTML="";}
+  lista.appendChild(li);
+ });
+});
+</script>
+</body></html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Actividad 1</title></head>
+<body>
+<button id="btn">Cargar mensaje</button>
+<p id="resultado"></p>
+<script>
+document.getElementById("btn").addEventListener("click",()=>{
+ const xhr=new XMLHttpRequest();
+ xhr.open("GET","info.txt");
+ xhr.onload=()=>{ if(xhr.status===200) resultado.textContent=xhr.responseText; }
+ xhr.send();
+});
+</script>
+</body></html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Actividad 9</title></head>
+<body>
+<select id="tipo"></select>
+<select id="valores"></select>
+<button id="btn">Mostrar selección</button>
+<script>
+let xml;
+fetch("709.xml").then(r=>r.text()).then(t=>{
+ xml=new DOMParser().parseFromString(t,"text/xml");
+ tipo.innerHTML=[...xml.documentElement.children].map(c=>`<option>${c.tagName}</option>`).join("");
+});
+tipo.addEventListener("change",e=>{
+ const els=xml.getElementsByTagName(e.target.value)[0].children;
+ valores.innerHTML=[...els].map(el=>`<option>${el.textContent}</option>`).join("");
+});
+btn.onclick=()=>alert(valores.value);
+</script>
+</body></html>

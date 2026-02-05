@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Actividad 10</title></head>
+<body>
+<select id="lista"></select>
+<script>
+fetch("710.json")
+ .then(r=>r.json())
+ .then(d=>{
+  lista.innerHTML=d.map(e=>`<option id="${e.codigo}">${e.nombre}</option>`).join("");
+ });
+</script>
+</body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Actividad 5</title></head>
+<body>
+<table border="1">
+<thead><tr><th>Nombre</th><th>Edad</th><th>Email</th></tr></thead>
+<tbody id="tabla"></tbody>
+</table>
+<script>
+const xhr=new XMLHttpRequest();
+xhr.open("GET","705.xml");
+xhr.onload=()=>{
+ const datos=xhr.responseXML.getElementsByTagName("dato");
+ let html="";
+ for(let d of datos){
+  html+=`<tr>
+  <td>${d.getElementsByTagName("nombre")[0].textContent}</td>
+  <td>${d.getElementsByTagName("edad")[0].textContent}</td>
+  <td>${d.getElementsByTagName("email")[0].textContent}</td>
+  </tr>`;
+ }
+ tabla.innerHTML=html;
+};
+xhr.send();
+</script>
+</body></html>
