@@ -1,0 +1,43 @@
+﻿<!-- HTML5 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Examen unidad 2 - Ejercicio 2</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function esPalindromo(cadena) {
+    // Función auxiliar para verificar si un carácter es alfanumérico
+    function esAlfanumerico(c) {
+        const codigo = c.charCodeAt(0);
+        return (
+            (codigo >= 48 && codigo <= 57) ||  // 0-9
+            (codigo >= 65 && codigo <= 90) ||  // A-Z
+            (codigo >= 97 && codigo <= 122)    // a-z
+        );
+    }
+
+    // Convertir a minúsculas sin usar toLowerCase
+    function aMinuscula(c) {
+        const codigo = c.charCodeAt(0);
+        if (codigo >= 65 && codigo <= 90) {
+            return String.fromCharCode(codigo + 32);
+        }
+        return c;
+    }
+//he de aclarar que no se lo que he hecho, pero simplemente he llamado al metodo y lo he envuelto con la cadena, y me ha devuelto solo una 
+//parte de la cadena
+    
+esAlfanumerico(console.log(cadena)); 
+ 
+    
+    
+}
+
+// Ejemplos de uso
+console.log(esPalindromo("Anita lava la tina")); 
+console.log(esPalindromo("A man, a plan, a canal: Panama")); 
+console.log(esPalindromo("Hola mundo")); 
+		</script>
+	</body>
+</html>

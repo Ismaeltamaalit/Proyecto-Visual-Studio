@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen ut3 - Ejercicio 2</title>
+</head>
+
+<script >
+let segundos=0;
+let minutos=0;
+let horas=0;
+
+function iniciarReloj(){
+    setInterval(actualizarReloj,1000);
+}
+function actualizarReloj(){
+    segundos++;
+    if(segundos==60){
+        segundos=0;
+        minutos++;
+        if(minutos==60){
+            minutos=0;
+            horas++;
+        }
+    }
+
+    function formatoTiempo(){
+        if(segundos< 10){
+            segundos="0"+segundos;
+        }else if(minutos <10){
+            minutos="0"+minutos;
+        }else if(horas<10){
+            horas="0"+horas;
+        }
+    }
+    document.getElementById("reloj").innerHTML= formatoTiempo(horas)+":"+formatoTiempo(minutos)+":"+formatoTiempo(segundos);
+}
+
+        
+		
+</script>
+
+</head>
+
+<body onload="iniciarReloj()">
+    <div id="reloj">00:00:00</div>
+    Reloj funcionando...
+
+
+    <input type="text" id="reloj" name="reloj" size="10"
+        style="background-color : Black; color : White; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;">
+
+
+</body>
+
+</html>

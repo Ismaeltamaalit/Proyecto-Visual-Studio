@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Comprobador de Sumas</h1>
+
+    <div>
+        <label id="label1">SUMA= </label>
+    </div>
+    
+    <div>
+        <label for="input1">Resultado 1:</label>
+        <input type="text" id="input1">
+    </div>
+    
+    <div>
+        <label for="input2">Resultado 2:</label>
+        <input type="text" id="input2">
+    </div>
+    
+    <button onclick="comprobarSumas()">Comprobar</button>
+    <button onclick="generarNuevasSumas()">Nuevas Sumas</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        let aleatorio1 = Math.floor(Math.random() * 100) + 1;
+        let aleatorio2 = Math.floor(Math.random() * 100) + 1;
+        let aleatorio3 = Math.floor(Math.random() * 100) + 1;
+        let aleatorio4 = Math.floor(Math.random() * 100) + 1;
+        
+        let suma1 = aleatorio1 + aleatorio2;
+        let suma2 = aleatorio3 + aleatorio4;
+
+        document.getElementById('label1').innerHTML = 
+            'SUMA= ' + aleatorio1 + ' + ' + aleatorio2 + ' y ' + aleatorio3 + ' + ' + aleatorio4;
+
+        function comprobarSumas() {
+            let respuesta1 = document.getElementById('input1').value;
+            let respuesta2 = document.getElementById('input2').value;
+            let resultadoDiv = document.getElementById('resultado');
+            
+            let num1 = parseInt(respuesta1);
+            let num2 = parseInt(respuesta2);
+            
+            let correcto1 = num1 === suma1;
+            let correcto2 = num2 === suma2;
+            
+            if (correcto1 && correcto2) {
+                resultadoDiv.textContent = "Ambas sumas son correctas";
+            } else if (correcto1 && !correcto2) {
+                resultadoDiv.textContent = "Primera suma correcta, segunda incorrecta";
+            } else if (!correcto1 && correcto2) {
+                resultadoDiv.textContent = "Primera suma incorrecta, segunda correcta";
+            } else {
+                resultadoDiv.textContent = "Ambas sumas son incorrectas";
+            }
+        }
+
+        function generarNuevasSumas() {
+            aleatorio1 = Math.floor(Math.random() * 100) + 1;
+            aleatorio2 = Math.floor(Math.random() * 100) + 1;
+            aleatorio3 = Math.floor(Math.random() * 100) + 1;
+            aleatorio4 = Math.floor(Math.random() * 100) + 1;
+            
+            suma1 = aleatorio1 + aleatorio2;
+            suma2 = aleatorio3 + aleatorio4;
+
+            document.getElementById('label1').innerHTML = 
+                'SUMA= ' + aleatorio1 + ' + ' + aleatorio2 + ' y ' + aleatorio3 + ' + ' + aleatorio4;
+            
+            document.getElementById('input1').value = '';
+            document.getElementById('input2').value = '';
+            document.getElementById('resultado').textContent = '';
+        }
+    </script>
+</body>
+</html>
