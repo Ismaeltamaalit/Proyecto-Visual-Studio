@@ -14,7 +14,7 @@
           colors: {
             bgMain: '#121212',
             bgSecondary: '#1e1e1e',
-            textSecondary: '#b3b3b3',
+            textSecondary: '#d1d5db',
             accent: '#3b82f6'
           }
         }
@@ -26,6 +26,10 @@
 </head>
 <body class="bg-bgMain text-white min-h-screen flex flex-col">
 
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- Header: contiene el logo y la navegación principal del sitio.
+  Visible en todas las secciones; facilita el acceso a secciones principales. -->
 <header class="bg-bgSecondary border-b border-neutral-800">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="../index/index.html" class="flex items-center gap-3">
@@ -43,7 +47,10 @@
   </div>
 </header>
 
-<main class="max-w-5xl mx-auto px-6 py-12">
+<!-- Main: listado de reviews recientes con miniaturas y puntuaciones.
+  Cada reseña se presenta como `article` con imagen, resumen y enlace
+  a la reseña completa; el contenido también está disponible para el modal. -->
+<main id="main-content" class="max-w-5xl mx-auto px-6 py-12">
   <h2 class="text-3xl font-semibold mb-6">Reviews recientes</h2>
 
   <div class="grid gap-6 md:grid-cols-2">
@@ -56,7 +63,7 @@
           <div class="flex items-center gap-4">
             <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm">PC</span>
             <span class="text-accent font-semibold">8.5</span>
-            <a href="#" class="ml-auto text-sm text-textSecondary hover:text-white open-detail" data-type="review" data-slug="review-juego-x">Leer reseña →</a>
+            <a href="#" class="ml-auto text-sm text-textSecondary hover:text-white open-detail" data-type="review" data-slug="review-juego-x" aria-label="Leer reseña completa de Juego X">Leer reseña →</a>
           </div>
         </div>
       </div>
@@ -71,7 +78,7 @@
           <div class="flex items-center gap-4">
             <span class="px-3 py-1 rounded-full bg-neutral-800 text-sm">Switch</span>
             <span class="text-accent font-semibold">9.0</span>
-            <a href="#" class="ml-auto text-sm text-textSecondary hover:text-white open-detail" data-type="review" data-slug="review-indie-y">Leer reseña →</a>
+            <a href="#" class="ml-auto text-sm text-textSecondary hover:text-white open-detail" data-type="review" data-slug="review-indie-y" aria-label="Leer reseña completa de Indie Y">Leer reseña →</a>
           </div>
         </div>
       </div>
@@ -109,6 +116,8 @@
   </div>
 </main>
 
+<!-- Footer: información legal y enlaces secundarios.
+  Sirve como referencia final con enlaces a políticas y recursos extra. -->
 <footer class="bg-bgSecondary border-t border-neutral-800 mt-auto">
   <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-textSecondary">
     <p class="text-sm">© Menethil Gaming</p>

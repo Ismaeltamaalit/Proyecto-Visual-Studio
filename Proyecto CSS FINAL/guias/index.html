@@ -14,7 +14,7 @@
           colors: {
             bgMain: '#121212',
             bgSecondary: '#1e1e1e',
-            textSecondary: '#b3b3b3',
+            textSecondary: '#d1d5db',
             accent: '#3b82f6'
           }
         }
@@ -26,6 +26,10 @@
 </head>
 <body class="bg-bgMain text-white min-h-screen flex flex-col">
 
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- Header: contiene el logo y la navegación principal del sitio.
+  Facilita la navegación entre secciones y marca la identidad del sitio. -->
 <header class="bg-bgSecondary border-b border-neutral-800">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="../index/index.html" class="flex items-center gap-3">
@@ -43,10 +47,13 @@
   </div>
 </header>
 
-<main class="max-w-5xl mx-auto px-6 py-12">
+<!-- Main: buscador y listado de guías/tutoriales con miniaturas y resúmenes.
+  Incluye un campo de búsqueda accesible y listas de `article` que describen
+  cada guía con imagen y resumen. -->
+<main id="main-content" class="max-w-5xl mx-auto px-6 py-12">
   <div class="flex items-center justify-between mb-6">
     <h2 class="text-3xl font-semibold">Guías y tutoriales</h2>
-    <input id="guide-search" type="search" placeholder="Buscar guías…" class="bg-bgSecondary rounded-md px-3 py-2 text-sm text-textSecondary focus:outline-none focus:ring-2 focus:ring-accent" />
+    <input id="guide-search" type="search" placeholder="Buscar guías…" aria-label="Buscar en guías" class="rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent" />
   </div>
 
   <div id="guides" class="grid gap-6 md:grid-cols-2">
@@ -88,6 +95,8 @@
   </div>
 </main>
 
+<!-- Footer: información legal y enlaces secundarios.
+  Contiene enlaces estáticos a políticas y términos. -->
 <footer class="bg-bgSecondary border-t border-neutral-800 mt-auto">
   <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-textSecondary">
     <p class="text-sm">© Menethil Gaming</p>

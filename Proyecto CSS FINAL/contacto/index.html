@@ -14,7 +14,7 @@
           colors: {
             bgMain: '#121212',
             bgSecondary: '#1e1e1e',
-            textSecondary: '#b3b3b3',
+            textSecondary: '#d1d5db',
             accent: '#3b82f6'
           }
         }
@@ -26,6 +26,10 @@
 </head>
 <body class="bg-bgMain text-white min-h-screen flex flex-col">
 
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- Header: contiene el logo y la navegación principal del sitio.
+  Proporciona enlaces globales y ancla la navegación en todas las páginas. -->
 <header class="bg-bgSecondary border-b border-neutral-800">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="../index/index.html" class="flex items-center gap-3">
@@ -43,7 +47,10 @@
   </div>
 </header>
 
-<main class="max-w-3xl mx-auto px-6 py-12">
+<!-- Main: sección principal con el formulario de contacto y descripción.
+  Incluye un formulario con labels vinculados (`for`/`id`) y un elemento
+  con `role="status"` para anunciar resultados de envío a lectores de pantalla. -->
+<main id="main-content" class="max-w-3xl mx-auto px-6 py-12">
   <div class="flex items-center gap-4 mb-4">
     <img src="../images/contact.svg" alt="" class="w-10 h-10 rounded-md">
     <h2 class="text-3xl font-semibold m-0">Contacto</h2>
@@ -52,27 +59,29 @@
 
   <form id="contact-form" class="bg-bgSecondary p-6 rounded-lg space-y-4 reveal">
     <div>
-      <label class="block text-sm mb-1">Nombre</label>
-      <input name="name" type="text" class="w-full bg-neutral-800 rounded-md px-3 py-2 text-sm" required />
+      <label for="name" class="block text-sm mb-1 font-medium">Nombre</label>
+      <input id="name" name="name" type="text" class="w-full rounded-md px-3 py-2 text-sm" required aria-required="true" />
     </div>
 
     <div>
-      <label class="block text-sm mb-1">Email</label>
-      <input name="email" type="email" class="w-full bg-neutral-800 rounded-md px-3 py-2 text-sm" required />
+      <label for="email" class="block text-sm mb-1 font-medium">Email</label>
+      <input id="email" name="email" type="email" class="w-full rounded-md px-3 py-2 text-sm" required aria-required="true" />
     </div>
 
     <div>
-      <label class="block text-sm mb-1">Mensaje</label>
-      <textarea name="message" rows="5" class="w-full bg-neutral-800 rounded-md px-3 py-2 text-sm" required></textarea>
+      <label for="message" class="block text-sm mb-1 font-medium">Mensaje</label>
+      <textarea id="message" name="message" rows="5" class="w-full rounded-md px-3 py-2 text-sm" required aria-required="true"></textarea>
     </div>
 
     <div class="flex items-center gap-4">
-      <button type="submit" class="bg-accent px-4 py-2 rounded-md font-semibold">Enviar</button>
-      <div id="contact-msg" class="text-sm text-textSecondary"></div>
+      <button type="submit" class="bg-accent px-4 py-2 rounded-md font-semibold hover:opacity-90 transition-opacity">Enviar</button>
+      <div id="contact-msg" class="text-sm text-textSecondary" role="status" aria-live="polite" aria-atomic="true"></div>
     </div>
   </form>
 </main>
 
+<!-- Footer: información legal y enlaces secundarios.
+  Contiene links a Políticas y Términos; está al final del flujo de lectura. -->
 <footer class="bg-bgSecondary border-t border-neutral-800 mt-auto">
   <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-textSecondary">
     <p class="text-sm text-textSecondary">© Menethil Gaming</p>

@@ -95,13 +95,16 @@ function initDetailModals() {
     const modal = document.createElement('div');
     modal.id = 'detail-modal';
     modal.className = 'fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'detail-title');
     modal.innerHTML = `
       <div class="bg-bgSecondary max-w-3xl w-full mx-4 rounded-lg overflow-hidden">
         <div class="flex items-center justify-between p-4 border-b border-neutral-800">
           <h3 id="detail-title" class="text-lg font-semibold"></h3>
           <div class="flex items-center gap-4">
-            <a id="detail-open-page" href="#" target="_blank" rel="noopener" class="text-sm text-accent hover:underline hidden">Abrir en página</a>
-            <button id="detail-close" aria-label="Cerrar" class="text-textSecondary hover:text-white">✕</button>
+            <a id="detail-open-page" href="#" target="_blank" rel="noopener" class="text-sm text-accent hover:underline hidden" aria-label="Abrir contenido en página completa">Abrir en página</a>
+            <button id="detail-close" aria-label="Cerrar modal" type="button" class="text-textSecondary hover:text-white">✕</button>
           </div>
         </div>
         <div class="p-6 flex gap-6">
@@ -122,6 +125,7 @@ function initDetailModals() {
   const meta = document.getElementById('detail-meta');
   const content = document.getElementById('detail-content');
   const closeBtn = document.getElementById('detail-close');
+  let lastActiveElement = null;
 
   async function openDetail(type, slug, inlineContent) {
     // First, if running file:// try to use embedded SITE_DATA
@@ -192,12 +196,19 @@ function initDetailModals() {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
+    // Guardar elemento activo y enfoque al modal
+    lastActiveElement = document.activeElement;
+    closeBtn.focus();
   }
 
   function closeDetail() {
     modal.classList.remove('flex');
     modal.classList.add('hidden');
     document.body.style.overflow = '';
+    // Restaurar enfoque al elemento anterior
+    if (lastActiveElement) {
+      lastActiveElement.focus();
+    }
   }
 
   // delegate clicks

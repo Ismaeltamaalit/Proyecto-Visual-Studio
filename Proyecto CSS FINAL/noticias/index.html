@@ -14,7 +14,7 @@
           colors: {
             bgMain: '#121212',
             bgSecondary: '#1e1e1e',
-            textSecondary: '#b3b3b3',
+            textSecondary: '#d1d5db',
             accent: '#3b82f6'
           }
         }
@@ -26,6 +26,10 @@
 </head>
 <body class="bg-bgMain text-white min-h-screen flex flex-col">
 
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- Header: contiene el logo y la navegación principal del sitio.
+  Proporciona contexto y enlaces rápidos para navegar entre secciones. -->
 <header class="bg-bgSecondary border-b border-neutral-800">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="../index/index.html" class="flex items-center gap-3">
@@ -43,7 +47,10 @@
   </div>
 </header>
 
-<main class="max-w-5xl mx-auto px-6 py-12">
+<!-- Main: listado de noticias con miniaturas y resúmenes.
+  Las noticias están organizadas en `article` para facilitar su lectura
+  y permiten ser anunciadas por lectores de pantalla como unidades. -->
+<main id="main-content" class="max-w-5xl mx-auto px-6 py-12">
   <h2 class="text-3xl font-semibold mb-6">Últimas noticias</h2>
 
   <div id="news-list" class="space-y-4">
@@ -97,10 +104,12 @@
   </div>
 
   <div class="mt-6 text-center">
-    <button id="load-more" class="bg-accent px-4 py-2 rounded-md font-semibold">Cargar más</button>
+    <button id="load-more" class="bg-accent px-4 py-2 rounded-md font-semibold hover:opacity-90 transition-opacity" aria-label="Cargar más noticias">Cargar más</button>
   </div>
 </main>
 
+<!-- Footer: información legal y enlaces secundarios.
+  Contiene créditos y enlaces de política que deben ser accesibles. -->
 <footer class="bg-bgSecondary border-t border-neutral-800 mt-auto">
   <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between text-textSecondary">
     <p class="text-sm">© Menethil Gaming</p>

@@ -14,7 +14,7 @@
           colors: {
             bgMain: '#121212',
             bgSecondary: '#1e1e1e',
-            textSecondary: '#b3b3b3',
+            textSecondary: '#d1d5db',
             accent: '#3b82f6'
           }
         }
@@ -27,7 +27,12 @@
 
 <body class="bg-bgMain text-white font-sans flex flex-col">
 
-<!-- HEADER -->
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+<!-- Header: contiene el logo y la navegación principal del sitio.
+  Proporciona enlaces globales (Inicio, Reviews, Noticias, Guías, Contacto).
+  Esta área actúa como punto de entrada para la navegación; es importante
+  que los enlaces sean accesibles por teclado y estén etiquetados correctamente. -->
 <header class="bg-bgSecondary border-b border-neutral-800">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="../index/index.html" class="flex items-center gap-3">
@@ -45,24 +50,31 @@
   </div>
 </header>
 
-<!-- HERO -->
-<section class="bg-gradient-to-br from-bgSecondary to-bgMain text-center py-20">
+<!-- Hero: área principal con título, descripción y llamada a la acción (CTA).
+  Contiene un `h2` claro para la jerarquía del contenido, un párrafo descriptivo
+  y un botón CTA que dirige a la sección de reviews. El fondo usa un gradiente
+  diseñado para mejorar la legibilidad del texto y añadir profundidad visual. -->
+<section class="text-center py-20" style="background-image: linear-gradient(135deg, #1e1e1e 0%, rgba(59,130,246,0.10) 35%, #0f1418 60%, #121212 100%);">
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="text-4xl font-bold mb-4">Todo sobre videojuegos</h2>
     <p class="text-textSecondary mb-8">
       Análisis, noticias y guías del mundo gamer, sin postureo.
     </p>
     <a href="../reviews/index.html"
-       class="inline-block bg-accent px-6 py-3 rounded-md font-semibold hover:opacity-90">
+       class="inline-block bg-accent px-6 py-3 rounded-md font-semibold hover:opacity-90 transition-opacity">
       Ver reviews
     </a>
   </div>
 </section>
 
-<!-- CONTENIDO -->
-<main class="max-w-6xl mx-auto px-6 py-16 space-y-16">
+<!-- Main Content: sección que contiene las subsecciones principales (noticias, reviews).
+  El `main` actúa como landmark principal para lectores de pantalla; dentro
+  se usan `section` y `article` para estructurar y aislar piezas de contenido. -->
+<main id="main-content" class="max-w-6xl mx-auto px-6 py-16 space-y-16">
 
-  <!-- NOTICIAS -->
+    <!-- Noticias: listado de noticias breves con imagen y resumen.
+      Cada noticia es un `article` independiente con encabezado y párrafo,
+      lo que facilita la navegación por piezas concretas de contenido. -->
   <section>
     <h3 class="text-2xl font-semibold mb-6">Últimas noticias</h3>
 
@@ -90,7 +102,10 @@
     </div>
   </section>
 
-  <!-- REVIEWS -->
+    <!-- Reviews: artículos destacados con puntuación y enlace a la reseña completa.
+      Cada tarjeta incluye imagen, metadatos (plataforma, puntuación) y un enlace
+      con `aria-label` cuando el texto del enlace no es suficientemente
+      descriptivo por sí mismo para usuarios de lectores de pantalla. -->
   <section>
     <h3 class="text-2xl font-semibold mb-6">Reviews destacadas</h3>
 
@@ -112,6 +127,8 @@
   </section>
 
 </main>
+
+<!-- Footer: información legal y enlaces secundarios -->
 
 <!-- FOOTER -->
 <footer class="bg-bgSecondary border-t border-neutral-800">
